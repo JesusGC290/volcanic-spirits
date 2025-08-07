@@ -1,0 +1,34 @@
+---
+import { Image } from "astro:assets";
+import agaveImage from "../assets/images/agave.jpg";
+---
+
+<section id="historia" class="bg-secondary py-20 sm:py-24">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+    <div class="text-left">
+      <p class="font-body font-bold uppercase tracking-wider text-secondary">Nuestras Raíces</p>
+      <h2 class="font-display text-4xl lg:text-5xl font-bold mt-2 text-text">El Legado del Volcán</h2>
+      <p class="font-body mt-6 text-lg text-text/80 leading-relaxed">
+        Volcanic Spirits no es solo un nombre, es el origen de todo lo que hacemos. Nuestra destilería yace a las faldas
+        del Volcán de Tequila, en Jalisco, una tierra sagrada cuya última erupción hace milenios enriqueció el suelo con
+        minerales únicos. Este terruño excepcional nutre nuestro agave azul, otorgándole un carácter y una complejidad
+        imposibles de encontrar en otro lugar.
+      </p>
+      <p class="font-body mt-4 text-lg text-text/80 leading-relaxed">
+        Honramos este legado con un proceso artesanal que respeta los tiempos de la naturaleza. Cada piña de agave se
+        cosecha a mano en su punto óptimo de madurez y se cuece lentamente en hornos de mampostería. El resultado es un
+        tequila que no solo se bebe, se siente. Es el espíritu de nuestra tierra, forjado en fuego y destilado con
+        pasión.
+      </p>
+    </div>
+
+    <div class="flex justify-center">
+      <Image
+        src={agaveImage}
+        alt="Planta de agave siendo cortada"
+        quality="high"
+        class="rounded-lg shadow-2xl shadow-secondary/20"
+      />
+    </div>
+  </div>
+</section>

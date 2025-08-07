@@ -1,0 +1,152 @@
+---
+import { Image } from "astro:assets";
+import drink_01 from "../assets/images/drink_01.jpg";
+import drink_02 from "../assets/images/drink_02.jpg";
+import drink_03 from "../assets/images/drink_03.jpg";
+---
+
+<section id="cocteleria" class="bg-accent py-20 sm:py-24">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="font-display text-4xl lg:text-5xl font-bold text-text">El Ritual Perfecto</h2>
+      <p class="font-body mt-4 max-w-2xl mx-auto text-lg text-text/70">
+        Descubre cómo el carácter de Volcanic Spirits transforma los clásicos.
+      </p>
+    </div>
+
+    <div class="mt-16 max-w-4xl mx-auto">
+      <div class="border-b border-secondary/20">
+        <nav class="-mb-px flex space-x-6 overflow-x-auto no-scrollbar" aria-label="Tabs">
+          <button
+            class="tab-button flex-shrink-0 whitespace-nowrap py-4 px-1 border-b-2 font-body font-bold text-lg border-primary text-primary"
+            aria-current="page"
+          >
+            Paloma Volcánica
+          </button>
+          <button
+            class="tab-button flex-shrink-0 whitespace-nowrap py-4 px-1 border-b-2 font-body font-bold text-lg border-transparent text-text/50 hover:text-text/80 hover:border-text/30"
+          >
+            Margarita de Fuego
+          </button>
+          <button
+            class="tab-button flex-shrink-0 whitespace-nowrap py-4 px-1 border-b-2 font-body font-bold text-lg border-transparent text-text/50 hover:text-text/80 hover:border-text/30"
+          >
+            Añejo Old Fashioned
+          </button>
+        </nav>
+      </div>
+
+      <div class="mt-8">
+        <div class="tab-panel grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+          <Image src={drink_01} alt="Cóctel Paloma" quality="high" class="rounded-lg shadow-lg col-span-1" />
+          <div class="col-span-1 md:col-span-2">
+            <h3 class="font-display text-2xl font-bold text-text">Paloma Volcánica</h3>
+            <p class="mt-2 text-text/80">
+              Una versión elevada del clásico mexicano, usando nuestro Tequila Blanco para un sabor a agave puro y
+              refrescante.
+            </p>
+            <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <h4 class="font-bold text-text">Ingredientes:</h4>
+                <ul class="list-disc list-inside mt-2 text-text/80">
+                  <li>2 oz Tequila Blanco</li>
+                  <li>4 oz Refresco de toronja</li>
+                  <li>½ oz Jugo de lima fresco</li>
+                  <li>Pizca de sal</li>
+                  <li>Rodaja de toronja</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-text">Preparación:</h4>
+                <ol class="list-decimal list-inside mt-2 text-text/80">
+                  <li>Escharchar vaso con sal.</li>
+                  <li>Añadir hielo y tequila.</li>
+                  <li>Rellenar con refresco.</li>
+                  <li>Exprimir lima y decorar.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-panel hidden grid-cols-1 md:grid-cols-3 gap-8 items-start">
+          <Image src={drink_02} alt="Cóctel Margarita" quality="high" class="rounded-lg shadow-lg col-span-1" />
+          <div class="col-span-1 md:col-span-2">
+            <h3 class="font-display text-2xl font-bold text-text">Margarita de Fuego</h3>
+            <p class="mt-2 text-text/80">
+              Nuestro Tequila Reposado le da un toque ahumado a la margarita, balanceado con un sutil picor de jalapeño.
+            </p>
+            <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <h4 class="font-bold text-text">Ingredientes:</h4>
+                <ul class="list-disc list-inside mt-2 text-text/80">
+                  <li>2 oz Tequila Reposado</li>
+                  <li>1 oz Jugo de lima fresco</li>
+                  <li>¾ oz Licor de naranja</li>
+                  <li>1 rodaja de jalapeño (opcional)</li>
+                  <li>Sal para escarchar</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-text">Preparación:</h4>
+                <ol class="list-decimal list-inside mt-2 text-text/80">
+                  <li>Agitar ingredientes con hielo.</li>
+                  <li>Colar en vaso escarchado.</li>
+                  <li>Decorar con rodaja de lima.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-panel hidden grid-cols-1 md:grid-cols-3 gap-8 items-start">
+          <Image src={drink_01} alt="Cóctel Old Fashioned" quality="high" class="rounded-lg shadow-lg col-span-1" />
+          <div class="col-span-1 md:col-span-2">
+            <h3 class="font-display text-2xl font-bold text-text">Añejo Old Fashioned</h3>
+            <p class="mt-2 text-text/80">
+              Una versión sofisticada del clásico, donde la complejidad de nuestro Volcanic reemplaza al whiskey.
+            </p>
+            <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <h4 class="font-bold text-text">Ingredientes:</h4>
+                <ul class="list-disc list-inside mt-2 text-text/80">
+                  <li>2.5 oz Volcanic</li>
+                  <li>1 terrón de azúcar</li>
+                  <li>2 chorritos de amargo de angostura</li>
+                  <li>Piel de naranja</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-text">Preparación:</h4>
+                <ol class="list-decimal list-inside mt-2 text-text/80">
+                  <li>Macerar azúcar y amargo.</li>
+                  <li>Añadir tequila y hielo.</li>
+                  <li>Remover lentamente.</li>
+                  <li>Exprimir piel de naranja y decorar.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const tabButtons = document.querySelectorAll(".tab-button");
+  const tabPanels = document.querySelectorAll(".tab-panel");
+
+  tabButtons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      tabPanels.forEach((panel) => panel.classList.add("hidden"));
+      tabButtons.forEach((btn) => {
+        btn.classList.remove("border-primary", "text-primary");
+        btn.classList.add("border-transparent", "text-text/50", "hover:text-text/80", "hover:border-text/30");
+      });
+
+      tabPanels[index].classList.remove("hidden");
+      tabPanels[index].classList.add("grid");
+      button.classList.add("border-primary", "text-primary");
+      button.classList.remove("border-transparent", "text-text/50", "hover:text-text/80", "hover:border-text/30");
+    });
+  });
+</script>

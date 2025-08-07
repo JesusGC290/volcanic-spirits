@@ -1,0 +1,67 @@
+---
+import { Image } from "astro:assets";
+import featureBgImage from "../assets/images/girldrink.avif";
+import bottleCutoutImage from "../assets/images/botella.avif";
+---
+
+<section class="bg-accent py-20 sm:py-24 lg:mb-52">
+  <div class="hidden lg:block max-w-7xl mx-auto">
+    <div class="relative flex justify-center items-center">
+      <div class="w-full lg:w-4/5">
+        <Image
+          src={featureBgImage}
+          alt="Persona disfrutando de una fiesta con una botella de tequila"
+          quality="high"
+          class="rounded-lg shadow-2xl shadow-secondary/20"
+        />
+      </div>
+
+      <div
+        class="w-11/12 md:w-1/2 lg:w-[40%] p-8 md:p-10 bg-black/80 backdrop-blur-sm
+        border border-secondary rounded-lg text-background
+        relative -mt-24 lg:absolute lg:mt-0 lg:left-0 lg:top-1/2 lg:translate-y-2/3"
+      >
+        <div class="max-w-md ml-auto text-left">
+          <h2 class="font-display text-3xl font-bold text-background">El Alma de la Celebración</h2>
+          <p class="font-body mt-4 text-lg text-background leading-relaxed">
+            Nacido para ser compartido, Volcanic Spirits es el catalizador de momentos inolvidables. Su sabor versátil y
+            suave lo convierte en la base perfecta para la coctelería creativa o para disfrutarse solo, celebrando las
+            conexiones que importan.
+          </p>
+        </div>
+      </div>
+
+      <div class="absolute z-20 translate-y-2/7 -translate-x-3/5 right-0 w-80">
+        <Image src={bottleCutoutImage} alt="Botella de Tequila Volcanic Spirits sin fondo" class="drop-shadow-2xl" />
+      </div>
+    </div>
+  </div>
+
+  <div class="block lg:hidden px-6">
+    <h2 class="font-display text-4xl font-bold text-text text-center">El Alma de la Celebración</h2>
+
+    <div class="relative mt-8">
+      <Image
+        src={featureBgImage}
+        alt="Amigos brindando con cócteles de tequila"
+        quality="mid"
+        class="rounded-lg shadow-xl"
+      />
+      <div class="mt-2">
+        <Image
+          src={bottleCutoutImage}
+          alt="Botella de Tequila Volcanic Spirits sin fondo"
+          class="w-36 mx-auto drop-shadow-xl"
+        />
+      </div>
+    </div>
+
+    <div class="bg-background p-8 -mt-24 pt-28 text-center rounded-lg shadow-xl">
+      <p class="font-body text-text/80 leading-relaxed">
+        Nacido para ser compartido, Volcanic Spirits es el catalizador de momentos inolvidables. Su sabor versátil y
+        suave lo convierte en la base perfecta para la coctelería creativa o para disfrutarse solo, celebrando las
+        conexiones que importan.
+      </p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,75 @@
+---
+import { Image } from "astro:assets";
+import partyImage from "../assets/images/party.avif";
+---
+
+<section id="producto" class="bg-background py-20 sm:py-24">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <p class="font-body font-bold uppercase tracking-wider text-secondary">Nuestra Edición Insignia</p>
+      <h2 class="font-display text-4xl lg:text-5xl font-bold mt-2 text-text">VOLCANIC</h2>
+    </div>
+
+    <div class="relative flex justify-center items-center">
+      <div class="w-full lg:w-4/5">
+        <Image
+          src={partyImage}
+          alt="Personas disfrutando de una fiesta con una botella de tequila"
+          quality="high"
+          class="rounded-lg shadow-2xl shadow-secondary/20"
+        />
+      </div>
+
+      <div
+        class="w-11/12 md:w-1/2 lg:w-[35%]
+        p-8 md:p-10
+        bg-black/80 backdrop-blur-sm
+        border border-secondary rounded-lg
+        text-background
+        relative -mt-24 lg:absolute lg:mt-0 lg:left-0 lg:top-1/2 lg:-translate-y-1/2"
+      >
+        <p class="font-body mt-4 text-lg text-background leading-relaxed">
+          Cada gota de nuestro Volcanic es un tributo a la paciencia y la tradición. Madurado en barricas de roble
+          americano, este destilado absorbe la esencia de la tierra volcánica, resultando en un sabor complejo y
+          extraordinariamente suave.
+        </p>
+
+        <ul class="mt-6 space-y-3 font-body text-background">
+          <li class="flex items-start">
+            <svg
+              class="w-5 h-5 mr-3 text-primary flex-shrink-0 mt-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg
+            >
+            <span><strong>Aroma:</strong> Notas de vainilla, caramelo y agave cocido.</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              class="w-5 h-5 mr-3 text-primary flex-shrink-0 mt-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg
+            >
+            <span><strong>Sabor:</strong> Equilibrio perfecto entre roble tostado y frutos secos.</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              class="w-5 h-5 mr-3 text-primary flex-shrink-0 mt-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg
+            >
+            <span><strong>Acabado:</strong> Largo, cálido y persistentemente suave.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

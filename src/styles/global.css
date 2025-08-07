@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  /* 🎨 Paleta de Colores */
+  --color-background: #f7f5f2;
+  --color-text: #222222;
+  --color-primary: #e86a33;
+  --color-secondary: #9e7b4f;
+  --color-accent: #f0f0f0;
+
+  /* ✒️ Tipografía */
+  --font-display: "Kaisei Opti", serif;
+  --font-body: "Inter", "sans-serif";
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE y Edge */
+  scrollbar-width: none; /* Firefox */
+}
