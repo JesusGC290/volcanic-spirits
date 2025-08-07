@@ -1,0 +1,97 @@
+---
+// src/components/ProductEntry.astro
+import { type ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+interface Props {
+  brandName: string;
+  category: string;
+  origin: string;
+  distillation?: string;
+  milling?: string;
+  alcohol: string;
+  description: string;
+  bgImage: ImageMetadata;
+  imageSrc: ImageMetadata;
+  bgAlt: string;
+  imageAlt: string;
+  layout?: "image-right" | "image-left";
+}
+
+const {
+  brandName,
+  category,
+  origin,
+  distillation,
+  milling,
+  alcohol,
+  description,
+  bgImage,
+  imageSrc,
+  bgAlt,
+  imageAlt,
+  layout = "image-right", // Por defecto, la imagen estará a la derecha
+} = Astro.props;
+---
+
+<div>
+  <div class="relative">
+    <Image src={bgImage} alt={bgAlt} quality="low" class="absolute inset-0 w-full h-full object-cover z-0" />
+    <div class="absolute inset-0 bg-black/30 z-10"></div>
+    <div class="relative z-20 px-6 sm:px-16 py-24">
+      <div class="flex flex-wrap lg:flex-nowrap lg:h-[500px]">
+        <div class:list={["flex items-start justify-end", { "lg:order-last": layout === "image-right" }]}>
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            quality="mid"
+            class="w-auto lg:h-[500px] lg:w-[350px] object-cover shrink-0"
+          />
+        </div>
+
+        <div class="flex flex-col">
+          <div class="bg-background/80 pt-8 px-8 md:pt-12 md:px-12">
+            <h3 class="font-display text-4xl md:text-5xl font-bold text-text">{brandName}</h3>
+            <div class="w-24 h-1 bg-secondary mt-4"></div>
+          </div>
+
+          <div class="bg-text/80 text-background py-8 px-8 lg:pt-12 lg:pb-0 md:px-12 flex-grow">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-4 text-sm font-body uppercase tracking-wider">
+              <div>
+                <p class="text-background/60">Origin</p>
+                <p class="font-semibold">{origin}</p>
+              </div>
+              <div>
+                <p class="text-background/60">Category</p>
+                <p class="font-semibold">{category}</p>
+              </div>
+              <div>
+                <p class="text-background/60">Alcohol</p>
+                <p class="font-semibold">{alcohol}</p>
+              </div>
+              {
+                distillation && (
+                  <div>
+                    <p class="text-background/60">Distillation</p>
+                    <p class="font-semibold">{distillation}</p>
+                  </div>
+                )
+              }
+              {
+                milling && (
+                  <div>
+                    <p class="text-background/60">Milling</p>
+                    <p class="font-semibold">{milling}</p>
+                  </div>
+                )
+              }
+            </div>
+            <p class="font-body mt-8 text-lg text-background/80 leading-relaxed">
+              {description}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

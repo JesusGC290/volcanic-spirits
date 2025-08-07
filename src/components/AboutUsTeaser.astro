@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets";
+import barsImg from "../assets/images/bars.jpg";
+---
+
+<section id="about" class="bg-background py-12 lg:py-24">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+      <div class="text-left">
+        <h2 class="font-display text-4xl lg:text-5xl font-bold text-text">About Volcanic Spirits</h2>
+        <p class="font-body mt-6 text-lg text-text/80 leading-relaxed">
+          We are a team with over a decade of experience in international trade and a deep love for Mexican spirits. Our
+          mission is to bring authentic brands of tequila, mezcal, raicilla, sotol, and other agave treasures to the
+          heart of the United States, opening paths for their essence to conquer new palates.
+        </p>
+        <p class="font-body mt-4 text-lg text-text/80 leading-relaxed">
+          At Volcanic Spirits, we believe that every drop of Mexican spirit is a living story: the strength of volcanic
+          soil, the patience of agave, the artistry of expert hands, and the heritage of generations.
+        </p>
+        <a
+          href="/about"
+          class="group inline-flex items-center mt-8 font-bold text-text hover:text-primary transition-colors duration-300"
+        >
+          Learn More
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
+          </svg>
+        </a>
+      </div>
+
+      <div class="flex justify-center">
+        <Image
+          src={barsImg}
+          alt="Un jimador trabajando en un campo de agave"
+          quality="mid"
+          class="w-full max-w-md object-cover rounded-lg shadow-xl shadow-secondary/10"
+        />
+      </div>
+    </div>
+  </div>
+</section>

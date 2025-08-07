@@ -1,15 +1,49 @@
 @import "tailwindcss";
 
+/* Peso: Thin (100) */
+@font-face {
+  font-family: "Black Mango";
+  src: url("/fonts/black-mango-thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Peso: Medium (500) */
+@font-face {
+  font-family: "Black Mango";
+  src: url("/fonts/black-mango-medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Peso: SemiBold (600) */
+@font-face {
+  font-family: "Black Mango";
+  src: url("/fonts/black-mango-semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Peso: Bold (700) */
+@font-face {
+  font-family: "Black Mango";
+  src: url("/fonts/black-mango-bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   /* 🎨 Paleta de Colores */
-  --color-background: #f7f5f2;
-  --color-text: #222222;
-  --color-primary: #e86a33;
-  --color-secondary: #9e7b4f;
-  --color-accent: #f0f0f0;
+  --color-background: #f8f9fa; /* Un gris muy claro, casi blanco */
+  --color-text: #121212; /* Un negro suave, no tan duro como el #000 */
+  --color-accent: #e9ecef; /* Un gris ligero para bordes o fondos sutiles */
 
   /* ✒️ Tipografía */
-  --font-display: "Kaisei Opti", serif;
+  --font-display: "Black Mango", serif;
   --font-body: "Inter", "sans-serif";
 }
 

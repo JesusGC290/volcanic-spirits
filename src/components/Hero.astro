@@ -1,30 +1,36 @@
 ---
 import { Image } from "astro:assets";
-import heroBgImage from "../assets/images/cover_02.webp";
+import heroBgImage from "../assets/images/volcan-right.jpg";
+import heroBgImageMobile from "../assets/images/volcan-central.jpg";
 ---
 
 <section>
   <div class="hidden md:block relative h-screen">
     <Image
       src={heroBgImage}
-      alt="Botella de Tequila Volcanic Spirits sobre un fondo de paisaje rocoso"
+      alt="Bottle of Tequila on a rocky landscape"
       quality="high"
       class="absolute inset-0 w-full h-full object-cover z-0"
     />
 
     <div class="relative h-full flex items-center z-10">
       <div class="max-w-xl text-left pl-8 sm:pl-12 lg:pl-24">
-        <h1 class="font-display text-5xl lg:text-7xl font-bold tracking-tight uppercase text-white">
-          Forjado en Fuego
+        <h1
+          class="font-display text-5xl lg:text-7xl font-bold tracking-tight uppercase text-white"
+          transition:animate="slide"
+        >
+          Connecting Worlds, Sharing Spirits.
         </h1>
-        <p class="font-body mt-4 text-lg lg:text-xl max-w-lg text-gray-200">
-          Tequila premium artesanal, cultivado en las ricas tierras volcánicas de Jalisco.
+        <p class="font-body mt-4 text-lg lg:text-xl max-w-lg text-gray-200" transition:animate="slide">
+          We bring authentic Mexican spirits to the heart of the United States, connecting a world of tradition to new
+          palates.
         </p>
         <a
-          href="#producto"
+          href="#portfolio"
           class="mt-8 inline-block bg-primary text-background font-body font-bold uppercase tracking-wider py-3 px-8 rounded-md hover:brightness-95 transition-transform duration-300 active:scale-95"
+          transition:animate="slide"
         >
-          Descubre el Sabor
+          Explore Our Portfolio
         </a>
       </div>
     </div>
@@ -32,24 +38,23 @@ import heroBgImage from "../assets/images/cover_02.webp";
 
   <div class="block md:hidden">
     <div class="h-96">
-      <Image
-        src={heroBgImage}
-        alt="Botella de Tequila Volcanic Spirits"
-        quality="mid"
-        class="w-full h-full object-cover"
-      />
+      <Image src={heroBgImageMobile} alt="Bottle of Tequila" quality="mid" class="w-full h-full object-cover" />
     </div>
 
-    <div class="bg-background text-center py-16 px-6">
-      <h1 class="font-display text-4xl font-bold tracking-tight uppercase text-text">Forjado en Fuego</h1>
-      <p class="font-body mt-4 text-lg max-w-md mx-auto text-text/80">
-        Tequila premium artesanal, cultivado en las ricas tierras volcánicas de Jalisco.
+    <div class="bg-background text-center pt-12 px-6">
+      <h1 class="font-display text-4xl font-bold tracking-tight uppercase text-text" transition:animate="slide">
+        Connecting Worlds, Sharing Spirits.
+      </h1>
+      <p class="font-body mt-4 text-lg max-w-md mx-auto text-text/80" transition:animate="slide">
+        We bring authentic Mexican spirits to the heart of the United States, connecting a world of tradition to new
+        palates.
       </p>
       <a
-        href="#producto"
+        href="#portfolio"
         class="mt-8 inline-block bg-primary text-background font-body font-bold uppercase tracking-wider py-3 px-8 rounded-md hover:brightness-95 transition-transform duration-300 active:scale-95"
+        transition:animate="slide"
       >
-        Descubre el Sabor
+        Explore Our Portfolio
       </a>
     </div>
   </div>

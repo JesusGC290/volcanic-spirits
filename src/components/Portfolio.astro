@@ -1,0 +1,87 @@
+---
+import { Image } from "astro:assets";
+// src/components/Portfolio.astro
+import ProductEntry from "./ProductEntry.astro";
+
+// Importa las imágenes de los productos
+import yuliiaImage from "../assets/images/yuliia.png";
+import tequilaImage from "../assets/images/tequila.png";
+import huacoImage from "../assets/images/huaco.png";
+import fortunaImage from "../assets/images/fortuna.png";
+import yuliiabgImage from "../assets/images/bg-yuliia.jpg";
+import tequilabgImage from "../assets/images/bg-agave-02.jpg";
+import huacobgImage from "../assets/images/bg-huaco.jpg";
+import fortunabgImage from "../assets/images/bg-fortuna.jpg";
+---
+
+<section id="portfolio" class="pt-10 lg:pt-24">
+  <div>
+    <div class="text-center max-w-3xl mx-auto px-6">
+      <h2 class="font-display text-4xl lg:text-5xl font-bold text-text">Our Portfolio</h2>
+      <p class="font-body mt-4 text-lg text-text/70 leading-relaxed">
+        We accompany Mexican brands on their international journey, from dream to reality. We believe in the power of
+        Mexican culture and the magic of spirits born from earth and fire.
+      </p>
+    </div>
+
+    <div class="mt-20">
+      <ProductEntry
+        brandName="YULIIA Mezcal"
+        category="Mezcal & Flavored Liqueurs"
+        origin="Oaxaca, Mexico"
+        distillation="Copper Still"
+        milling="Stone Mill"
+        alcohol="40%/18%"
+        description="Our mezcal bears the artisanal classification due to its production method... To obtain our artisanal mezcal, the maguey is cooked in underground ovens heated by wood... Fermentation takes place in aluminum vats, and distillation takes place in copper stills with the fruit..."
+        bgImage={yuliiabgImage}
+        imageSrc={yuliiaImage}
+        bgAlt="Bottle of YULIIA Mezcal"
+        imageAlt="Bottle of YULIIA Mezcal"
+        layout="image-right"
+      />
+
+      <ProductEntry
+        brandName="Caminante Tequila"
+        category="Tequila"
+        origin="Guadalajara, Jalisco"
+        distillation="Copper still"
+        milling="Milling train"
+        alcohol="40%"
+        description="To create such a high-quality tequila in this privileged region, it requires patient waiting for up to ten years. From here, we begin a delicate process of honey production, extraction, fermentation, distillation, and a resting period of several months."
+        bgImage={tequilabgImage}
+        imageSrc={tequilaImage}
+        bgAlt="Bottle of Caminante Tequila"
+        imageAlt="Bottle of Caminante Tequila"
+        layout="image-left"
+      />
+
+      <ProductEntry
+        brandName="Huaco Agave Distillate"
+        category="Agave Distillate"
+        origin="Jalisco México"
+        distillation="Copper still"
+        milling="Dough mill"
+        alcohol="26%"
+        description="Huaco is a unique Agave Distillate, 100% Mexican, with an innovative proposal of flavors, strawberry, pineapple, mango, tamarind, cucumber and some others."
+        bgImage={huacobgImage}
+        imageSrc={huacoImage}
+        bgAlt="Bottle of Huaco Agave Distillate"
+        imageAlt="Bottle of Huaco Agave Distillate"
+        layout="image-right"
+      />
+
+      <ProductEntry
+        brandName="Cerveza Fortuna"
+        category="Craft Beer"
+        origin="Guadalajara, Jalisco"
+        alcohol="4.8%"
+        description="Cerveza Fortuna was born from the union and friendship of four entrepreneurs passionate about beer... These Beers are made with dedication, insight, and respect, achieving the ideal product to enjoy the best moments accompanied by a beer."
+        bgImage={fortunabgImage}
+        imageSrc={fortunaImage}
+        bgAlt="Bottle of Cerveza Fortuna California Ale"
+        imageAlt="Bottle of Cerveza Fortuna California Ale"
+        layout="image-left"
+      />
+    </div>
+  </div>
+</section>
