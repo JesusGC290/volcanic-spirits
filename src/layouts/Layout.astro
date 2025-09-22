@@ -25,6 +25,29 @@ const { title } = Astro.props;
   </head>
   <body class="bg-background text-text font-body antialiased">
     <slot />
+    <script>
+      import { gsap } from "gsap";
+      import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Animación genérica para elementos que aparecen con el scroll
+      const animatedElements = document.querySelectorAll(".animate-on-scroll");
+
+      animatedElements.forEach((element) => {
+        gsap.from(element, {
+          opacity: 0,
+          y: 50, // Empieza 50px más abajo
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: element,
+            start: "top 85%", // La animación empieza cuando el 85% del elemento es visible
+            toggleActions: "play none none none", // La animación solo se ejecuta una vez
+          },
+        });
+      });
+    </script>
   </body>
 </html>
 

@@ -10,13 +10,13 @@ const { agaveSpirits } = content;
 <section id="education" class="bg-background py-20 sm:py-24">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="text-center max-w-3xl mx-auto">
-      <h2 class="font-display text-4xl lg:text-5xl font-bold text-text" transition:animate="slide">
+      <h2 class="font-display text-4xl lg:text-5xl font-bold text-text animate-on-scroll">
         {agaveSpirits.title}
       </h2>
     </div>
 
     <div class="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
-      <div class="lg:sticky lg:top-24 h-[500px] lg:h-auto">
+      <div class="lg:sticky lg:top-24 h-[500px] lg:h-auto animate-on-scroll">
         <Image
           src={agaveArtImage}
           alt="Artisanal process of agave spirits"
@@ -27,7 +27,7 @@ const { agaveSpirits } = content;
       <div class="flex flex-col gap-16">
         {
           agaveSpirits.spirits.map((spirit) => (
-            <div transition:animate="slide">
+            <div class="animate-on-scroll">
               <h3 class="font-display text-3xl font-bold text-text">{spirit.name}</h3>
               <p class="font-body mt-4 text-lg text-text/80 leading-relaxed">{spirit.description}</p>
             </div>

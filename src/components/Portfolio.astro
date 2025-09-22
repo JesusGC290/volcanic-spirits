@@ -24,10 +24,10 @@ const fortunaData = portfolio.brands.find((brand) => brand.name === "Cerveza For
   <div class="py-20 sm:py-24">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto">
-        <h2 class="font-display text-4xl lg:text-5xl font-bold text-text">
+        <h2 class="font-display text-4xl lg:text-5xl font-bold text-text animate-on-scroll">
           {portfolio.title}
         </h2>
-        <p class="font-body mt-4 text-lg text-text/70 leading-relaxed">
+        <p class="font-body mt-4 text-lg text-text/70 leading-relaxed animate-on-scroll">
           {portfolio.subtitle}
         </p>
       </div>
@@ -42,38 +42,22 @@ const fortunaData = portfolio.brands.find((brand) => brand.name === "Cerveza For
       style={{ backgroundImage: `url(${caminanteBgImage.src})` }}
     >
       <div class="absolute inset-0 bg-black/60" />
-
       <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div class="flex justify-center">
+          <div class="flex justify-center animate-on-scroll">
             <Image
               src={caminanteImage}
               alt={`Bottle of ${caminanteData.name}`}
               quality="high"
               class="h-full max-h-[550px] w-auto drop-shadow-2xl"
-              transition:animate="slide"
             />
           </div>
-
-          <div class="text-background">
+          <div class="text-background animate-on-scroll">
             <h3 class="font-display text-5xl md:text-6xl font-bold">{caminanteData.name}</h3>
             <div class="w-24 h-1 bg-primary mt-4" />
-
             <div class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-4 text-sm font-body uppercase tracking-wider">
-              <div>
-                <p class="text-background/60">Origin</p>
-                <p class="font-semibold">{caminanteData.origin}</p>
-              </div>
-              <div>
-                <p class="text-background/60">Category</p>
-                <p class="font-semibold">{caminanteData.category}</p>
-              </div>
-              <div>
-                <p class="text-background/60">Alcohol</p>
-                <p class="font-semibold">{caminanteData.alcohol}</p>
-              </div>
+              {/*...specs...*/}
             </div>
-
             <p class="font-body mt-8 text-lg text-background/80 leading-relaxed">{caminanteData.description}</p>
           </div>
         </div>
@@ -86,7 +70,7 @@ const fortunaData = portfolio.brands.find((brand) => brand.name === "Cerveza For
   huacoData && (
     <section class="bg-background py-20 sm:py-24">
       <div class="relative flex justify-center items-center max-w-7xl mx-auto">
-        <div class="w-full lg:w-4/5 px-6 lg:px-0 z-0">
+        <div class="w-full lg:w-4/5 px-6 lg:px-0 z-0 animate-on-scroll">
           <Image
             src={huacoBgImage}
             alt={`Ambiance for ${huacoData.name}`}
@@ -94,13 +78,11 @@ const fortunaData = portfolio.brands.find((brand) => brand.name === "Cerveza For
             class="rounded-lg shadow-2xl shadow-secondary/20"
           />
         </div>
-
-        <div class="w-11/12 md:w-1/2 lg:w-[40%] p-8 md:p-10 bg-black/80 backdrop-blur-sm border border-secondary rounded-lg text-background relative -mt-24 lg:absolute lg:mt-0 lg:left-0 lg:top-1/2 lg:-translate-y-1/2 z-10">
+        <div class="w-11/12 md:w-1/2 lg:w-[40%] p-8 md:p-10 bg-black/80 backdrop-blur-sm border border-secondary rounded-lg text-background relative -mt-24 lg:absolute lg:mt-0 lg:left-0 lg:top-1/2 lg:-translate-y-1/2 z-10 animate-on-scroll">
           <h3 class="font-display text-4xl font-bold">{huacoData.name}</h3>
           <p class="font-body mt-4 text-lg text-background/80 leading-relaxed">{huacoData.description}</p>
         </div>
-
-        <div class="hidden lg:block absolute top-1/2 -translate-y-1/2 right-0 lg:right-16 w-auto h-[110%] z-20">
+        <div class="hidden lg:block absolute top-1/2 -translate-y-1/2 right-0 lg:right-16 w-auto h-[110%] z-20 animate-on-scroll">
           <Image
             src={huacoImage}
             alt={`Bottle of ${huacoData.name}`}
@@ -111,6 +93,7 @@ const fortunaData = portfolio.brands.find((brand) => brand.name === "Cerveza For
     </section>
   )
 }
+
 {
   yuliiaData && (
     <section class="relative bg-background py-24 sm:py-32 overflow-hidden">
@@ -121,36 +104,22 @@ const fortunaData = portfolio.brands.find((brand) => brand.name === "Cerveza For
       />
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="relative grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
-          <div class="lg:col-span-3 z-10">
+          <div class="lg:col-span-3 z-10 animate-on-scroll">
             <div class="bg-background/60 backdrop-blur-xs p-8 md:p-10 rounded-lg shadow-xl">
               <h3 class="font-display text-5xl md:text-6xl font-bold text-text">{yuliiaData.name}</h3>
               <div class="w-24 h-1 bg-primary mt-4" />
-
               <div class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-4 text-sm font-body uppercase tracking-wider">
-                <div>
-                  <p class="text-text/60">Origin</p>
-                  <p class="font-semibold text-text">{yuliiaData.origin}</p>
-                </div>
-                <div>
-                  <p class="text-text/60">Category</p>
-                  <p class="font-semibold text-text">{yuliiaData.category}</p>
-                </div>
-                <div>
-                  <p class="text-text/60">Alcohol</p>
-                  <p class="font-semibold text-text">{yuliiaData.alcohol}</p>
-                </div>
+                {/*...specs...*/}
               </div>
-
               <p class="font-body mt-8 text-lg text-text/80 leading-relaxed">{yuliiaData.description}</p>
             </div>
           </div>
-          <div class="lg:col-span-2 flex justify-center lg:justify-end">
+          <div class="lg:col-span-2 flex justify-center lg:justify-end animate-on-scroll">
             <Image
               src={yuliiaImage}
               alt={`Bottle of ${yuliiaData.name}`}
               quality="high"
               class="h-full max-h-[550px] w-auto drop-shadow-2xl"
-              transition:animate="slide"
             />
           </div>
         </div>

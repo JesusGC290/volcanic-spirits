@@ -1,4 +1,5 @@
 ---
+// src/components/Hero.astro
 import { Image } from "astro:assets";
 import heroBgImage from "../assets/images/hero.jpg";
 import heroBgImageMobile from "../assets/images/hero.jpg";
@@ -13,22 +14,19 @@ import heroBgImageMobile from "../assets/images/hero.jpg";
       class="absolute inset-0 w-full h-full object-cover z-0"
     />
     <div class="absolute inset-0 w-3/4 bg-gradient-to-r from-black/90 to-transparent z-10"></div>
-    <div class="relative h-full flex items-center z-10">
+    <div class="relative h-full flex items-center z-20">
       <div class="max-w-xl text-left pl-8 sm:pl-12 lg:pl-24">
-        <h1
-          class="font-display text-5xl lg:text-7xl font-bold tracking-tight uppercase text-white"
-          transition:animate="slide"
-        >
+        {/* Eliminamos `transition:animate` y añadimos la clase `animate-on-scroll` */}
+        <h1 class="font-display text-5xl lg:text-7xl font-bold tracking-tight uppercase text-white animate-on-scroll">
           Connecting Worlds, Sharing Spirits.
         </h1>
-        <p class="font-body mt-4 text-lg lg:text-xl max-w-lg text-gray-200" transition:animate="slide">
+        <p class="font-body mt-4 text-lg lg:text-xl max-w-lg text-gray-200 animate-on-scroll">
           We bring authentic Mexican spirits to the heart of the United States, connecting a world of tradition to new
           palates.
         </p>
         <a
           href="#portfolio"
-          class="mt-8 inline-block bg-primary text-background font-body font-bold uppercase tracking-wider py-3 px-8 rounded-md hover:brightness-95 transition-transform duration-300 active:scale-95"
-          transition:animate="slide"
+          class="mt-8 inline-block bg-primary text-background font-body font-bold uppercase tracking-wider py-3 px-8 rounded-md hover:brightness-95 transition-transform duration-300 active:scale-95 animate-on-scroll"
         >
           Explore Our Portfolio
         </a>
@@ -40,19 +38,18 @@ import heroBgImageMobile from "../assets/images/hero.jpg";
     <div class="h-96">
       <Image src={heroBgImageMobile} alt="Bottle of Tequila" quality="mid" class="w-full h-full object-cover" />
     </div>
-
     <div class="bg-background text-center pt-12 px-6">
-      <h1 class="font-display text-4xl font-bold tracking-tight uppercase text-text" transition:animate="slide">
+      {/* Hacemos lo mismo para la versión móvil */}
+      <h1 class="font-display text-4xl font-bold tracking-tight uppercase text-text animate-on-scroll">
         Connecting Worlds, Sharing Spirits.
       </h1>
-      <p class="font-body mt-4 text-lg max-w-md mx-auto text-text/80" transition:animate="slide">
+      <p class="font-body mt-4 text-lg max-w-md mx-auto text-text/80 animate-on-scroll">
         We bring authentic Mexican spirits to the heart of the United States, connecting a world of tradition to new
         palates.
       </p>
       <a
         href="#portfolio"
-        class="mt-8 inline-block bg-primary text-background font-body font-bold uppercase tracking-wider py-3 px-8 rounded-md hover:brightness-95 transition-transform duration-300 active:scale-95"
-        transition:animate="slide"
+        class="mt-8 inline-block bg-primary text-background font-body font-bold uppercase tracking-wider py-3 px-8 rounded-md hover:brightness-95 transition-transform duration-300 active:scale-95 animate-on-scroll"
       >
         Explore Our Portfolio
       </a>
