@@ -1,87 +1,229 @@
 ---
-import { Image } from "astro:assets";
 // src/components/Portfolio.astro
-import ProductEntry from "./ProductEntry.astro";
+import { Image } from "astro:assets";
+import content from "../content/en.json";
 
-// Importa las imágenes de los productos
+// Importamos TODAS las imágenes que usaremos en el portafolio
+import caminanteImage from "../assets/images/tequila-op.png";
+import caminanteBgImage from "../assets/images/templo.jpg";
 import yuliiaImage from "../assets/images/yuliia.png";
-import tequilaImage from "../assets/images/tequila.png";
+import yuliiaBgImage from "../assets/images/horno.jpg";
 import huacoImage from "../assets/images/huaco.png";
+import huacoBgImage from "../assets/images/mix.jpg";
 import fortunaImage from "../assets/images/fortuna.png";
-import yuliiabgImage from "../assets/images/bg-yuliia.jpg";
-import tequilabgImage from "../assets/images/bg-agave-02.jpg";
-import huacobgImage from "../assets/images/bg-huaco.jpg";
-import fortunabgImage from "../assets/images/bg-fortuna.jpg";
+import fortunaBgImage from "../assets/images/preparation.jpg";
+
+const { portfolio } = content;
+const caminanteData = portfolio.brands.find((brand) => brand.name === "Caminante Tequila");
+const yuliiaData = portfolio.brands.find((brand) => brand.name === "YULIIA Mezcal");
+const huacoData = portfolio.brands.find((brand) => brand.name === "Huaco Agave Distillate");
+const fortunaData = portfolio.brands.find((brand) => brand.name === "Cerveza Fortuna");
 ---
 
-<section id="portfolio" class="pt-10 lg:pt-24">
-  <div>
-    <div class="text-center max-w-3xl mx-auto px-6">
-      <h2 class="font-display text-4xl lg:text-5xl font-bold text-text">Our Portfolio</h2>
-      <p class="font-body mt-4 text-lg text-text/70 leading-relaxed">
-        We accompany Mexican brands on their international journey, from dream to reality. We believe in the power of
-        Mexican culture and the magic of spirits born from earth and fire.
-      </p>
-    </div>
-
-    <div class="mt-20">
-      <ProductEntry
-        brandName="YULIIA Mezcal"
-        category="Mezcal & Flavored Liqueurs"
-        origin="Oaxaca, Mexico"
-        distillation="Copper Still"
-        milling="Stone Mill"
-        alcohol="40%/18%"
-        description="Our mezcal bears the artisanal classification due to its production method... To obtain our artisanal mezcal, the maguey is cooked in underground ovens heated by wood... Fermentation takes place in aluminum vats, and distillation takes place in copper stills with the fruit..."
-        bgImage={yuliiabgImage}
-        imageSrc={yuliiaImage}
-        bgAlt="Bottle of YULIIA Mezcal"
-        imageAlt="Bottle of YULIIA Mezcal"
-        layout="image-right"
-      />
-
-      <ProductEntry
-        brandName="Caminante Tequila"
-        category="Tequila"
-        origin="Guadalajara, Jalisco"
-        distillation="Copper still"
-        milling="Milling train"
-        alcohol="40%"
-        description="To create such a high-quality tequila in this privileged region, it requires patient waiting for up to ten years. From here, we begin a delicate process of honey production, extraction, fermentation, distillation, and a resting period of several months."
-        bgImage={tequilabgImage}
-        imageSrc={tequilaImage}
-        bgAlt="Bottle of Caminante Tequila"
-        imageAlt="Bottle of Caminante Tequila"
-        layout="image-left"
-      />
-
-      <ProductEntry
-        brandName="Huaco Agave Distillate"
-        category="Agave Distillate"
-        origin="Jalisco México"
-        distillation="Copper still"
-        milling="Dough mill"
-        alcohol="26%"
-        description="Huaco is a unique Agave Distillate, 100% Mexican, with an innovative proposal of flavors, strawberry, pineapple, mango, tamarind, cucumber and some others."
-        bgImage={huacobgImage}
-        imageSrc={huacoImage}
-        bgAlt="Bottle of Huaco Agave Distillate"
-        imageAlt="Bottle of Huaco Agave Distillate"
-        layout="image-right"
-      />
-
-      <ProductEntry
-        brandName="Cerveza Fortuna"
-        category="Craft Beer"
-        origin="Guadalajara, Jalisco"
-        alcohol="4.8%"
-        description="Cerveza Fortuna was born from the union and friendship of four entrepreneurs passionate about beer... These Beers are made with dedication, insight, and respect, achieving the ideal product to enjoy the best moments accompanied by a beer."
-        bgImage={fortunabgImage}
-        imageSrc={fortunaImage}
-        bgAlt="Bottle of Cerveza Fortuna California Ale"
-        imageAlt="Bottle of Cerveza Fortuna California Ale"
-        layout="image-left"
-      />
+<section id="portfolio" class="bg-accent">
+  <div class="py-20 sm:py-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto">
+        <h2 class="font-display text-4xl lg:text-5xl font-bold text-text">
+          {portfolio.title}
+        </h2>
+        <p class="font-body mt-4 text-lg text-text/70 leading-relaxed">
+          {portfolio.subtitle}
+        </p>
+      </div>
     </div>
   </div>
 </section>
+
+{
+  caminanteData && (
+    <section
+      class="relative bg-cover bg-center bg-fixed py-24 sm:py-32"
+      style={{ backgroundImage: `url(${caminanteBgImage.src})` }}
+    >
+      <div class="absolute inset-0 bg-black/60" />
+
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="flex justify-center">
+            <Image
+              src={caminanteImage}
+              alt={`Bottle of ${caminanteData.name}`}
+              quality="high"
+              class="h-full max-h-[550px] w-auto drop-shadow-2xl"
+              transition:animate="slide"
+            />
+          </div>
+
+          <div class="text-background">
+            <h3 class="font-display text-5xl md:text-6xl font-bold">{caminanteData.name}</h3>
+            <div class="w-24 h-1 bg-primary mt-4" />
+
+            <div class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-4 text-sm font-body uppercase tracking-wider">
+              <div>
+                <p class="text-background/60">Origin</p>
+                <p class="font-semibold">{caminanteData.origin}</p>
+              </div>
+              <div>
+                <p class="text-background/60">Category</p>
+                <p class="font-semibold">{caminanteData.category}</p>
+              </div>
+              <div>
+                <p class="text-background/60">Alcohol</p>
+                <p class="font-semibold">{caminanteData.alcohol}</p>
+              </div>
+            </div>
+
+            <p class="font-body mt-8 text-lg text-background/80 leading-relaxed">{caminanteData.description}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+{
+  huacoData && (
+    <section class="bg-background py-20 sm:py-24">
+      <div class="relative flex justify-center items-center max-w-7xl mx-auto">
+        <div class="w-full lg:w-4/5 px-6 lg:px-0 z-0">
+          <Image
+            src={huacoBgImage}
+            alt={`Ambiance for ${huacoData.name}`}
+            quality="high"
+            class="rounded-lg shadow-2xl shadow-secondary/20"
+          />
+        </div>
+
+        <div class="w-11/12 md:w-1/2 lg:w-[40%] p-8 md:p-10 bg-black/80 backdrop-blur-sm border border-secondary rounded-lg text-background relative -mt-24 lg:absolute lg:mt-0 lg:left-0 lg:top-1/2 lg:-translate-y-1/2 z-10">
+          <h3 class="font-display text-4xl font-bold">{huacoData.name}</h3>
+          <p class="font-body mt-4 text-lg text-background/80 leading-relaxed">{huacoData.description}</p>
+        </div>
+
+        <div class="hidden lg:block absolute top-1/2 -translate-y-1/2 right-0 lg:right-16 w-auto h-[110%] z-20">
+          <Image
+            src={huacoImage}
+            alt={`Bottle of ${huacoData.name}`}
+            class="h-full max-h-[550px] w-auto drop-shadow-2xl"
+          />
+        </div>
+      </div>
+    </section>
+  )
+}
+{
+  yuliiaData && (
+    <section class="relative bg-background py-24 sm:py-32 overflow-hidden">
+      <Image
+        src={yuliiaBgImage}
+        alt="Artisanal mezcal production"
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full object-cover opacity-60 z-0"
+      />
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="relative grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+          <div class="lg:col-span-3 z-10">
+            <div class="bg-background/60 backdrop-blur-xs p-8 md:p-10 rounded-lg shadow-xl">
+              <h3 class="font-display text-5xl md:text-6xl font-bold text-text">{yuliiaData.name}</h3>
+              <div class="w-24 h-1 bg-primary mt-4" />
+
+              <div class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-4 text-sm font-body uppercase tracking-wider">
+                <div>
+                  <p class="text-text/60">Origin</p>
+                  <p class="font-semibold text-text">{yuliiaData.origin}</p>
+                </div>
+                <div>
+                  <p class="text-text/60">Category</p>
+                  <p class="font-semibold text-text">{yuliiaData.category}</p>
+                </div>
+                <div>
+                  <p class="text-text/60">Alcohol</p>
+                  <p class="font-semibold text-text">{yuliiaData.alcohol}</p>
+                </div>
+              </div>
+
+              <p class="font-body mt-8 text-lg text-text/80 leading-relaxed">{yuliiaData.description}</p>
+            </div>
+          </div>
+          <div class="lg:col-span-2 flex justify-center lg:justify-end">
+            <Image
+              src={yuliiaImage}
+              alt={`Bottle of ${yuliiaData.name}`}
+              quality="high"
+              class="h-full max-h-[550px] w-auto drop-shadow-2xl"
+              transition:animate="slide"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+{
+  fortunaData && (
+    <section id="fortuna-parallax" class="relative h-[800px] bg-background pt-20">
+      <div class="flex justify-center items-center h-full w-full">
+        <div class="relative flex justify-center items-center max-w-7xl mx-auto w-full">
+          <div class="parallax-bg w-full lg:w-4/5 h-[600px] px-6 lg:px-0">
+            <Image
+              src={fortunaBgImage}
+              alt={`Ambiance for ${fortunaData.name}`}
+              quality="high"
+              class="rounded-lg shadow-2xl shadow-secondary/20 h-[600px] w-full object-cover"
+            />
+          </div>
+
+          <div class="parallax-bottle absolute inset-0 flex items-center">
+            <Image
+              src={fortunaImage}
+              alt={`Bottle of ${fortunaData.name}`}
+              class="h-full max-h-[550px] w-auto drop-shadow-2xl"
+            />
+          </div>
+
+          <div class="parallax-card absolute inset-0 flex items-end justify-end drop-shadow-2xl">
+            <div class="w-11/12 md:w-1/2 lg:w-2/5 p-8 m-8 bg-black/80 backdrop-blur-sm border border-secondary rounded-lg text-background">
+              <h3 class="font-display text-4xl font-bold">{fortunaData.name}</h3>
+              <p class="font-body mt-4 text-lg text-background/80 leading-relaxed">{fortunaData.description}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Animación para la sección de Fortuna
+  gsap.to(".parallax-bg", {
+    yPercent: -20, // Se mueve hacia arriba un 20% de su altura
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#fortuna-parallax",
+      scrub: true, // Asocia el movimiento directamente al scroll
+    },
+  });
+
+  gsap.to(".parallax-bottle", {
+    yPercent: -40, // Se mueve el doble de rápido que el fondo
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#fortuna-parallax",
+      scrub: true,
+    },
+  });
+
+  gsap.to(".parallax-card", {
+    yPercent: -50, // Se mueve aún más rápido, dando la sensación de estar más cerca
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#fortuna-parallax",
+      scrub: true,
+    },
+  });
+</script>

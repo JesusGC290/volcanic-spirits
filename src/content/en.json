@@ -1,0 +1,100 @@
+{
+  "hero": {
+    "title": "Connecting Worlds, Sharing Spirits.",
+    "subtitle": "We bring authentic Mexican spirits to the heart of the United States, connecting a world of tradition to new palates.",
+    "cta_button": "Explore Our Portfolio"
+  },
+  "about": {
+    "title": "About Volcanic Spirits",
+    "intro_p1": "We are a team with over a decade of experience in international trade and a deep love for Mexican spirits.",
+    "intro_p2": "At Volcanic Spirits, we believe that every drop of Mexican spirit is a living story: the strength of volcanic soil, the patience of agave, the artistry of expert hands, and the heritage of generations.",
+    "mission_title": "Our Mission",
+    "mission_p1": "Our mission is to distribute and market Premium Distilled Spirits with history and identity to the most desirable commercial destinations. ",
+    "what_we_do_title": "What we do",
+    "what_we_do_list": [
+      "Regulatory advice, labeling, and legal compliance (TTB, FDA, packaging, etc). ",
+      "Brand development and adaptation for the U.S. market. ",
+      "Promotion strategies, marketing, and commercial alliances. ",
+      "Import and distribution with reliable partners in the USA. "
+    ],
+    "why_we_do_it_title": "Why we do it",
+    "why_we_do_it_p1": "Because we are driven by passion. Because we know that behind every bottle there is a story worth telling and sharing. ",
+    "why_we_do_it_p2": "We want the world to know the authenticity, quality, and artistry in every Mexican product. "
+  },
+  "portfolio": {
+    "title": "Our Portfolio ",
+    "subtitle": "We accompany Mexican brands on their international journey, from dream to reality. ",
+    "brands": [
+      {
+        "name": "YULIIA Mezcal",
+        "category": "Mezcal & Flavored Liqueurs ",
+        "origin": "Oaxaca, Mexico ",
+        "distillation": "Copper Still ",
+        "milling": "Stone Mill ",
+        "alcohol": "40%/18% ",
+        "description": "Our mezcal bears the artisanal classification due to its production method, which dates back to our ancestors. To obtain our artisanal mezcal, the maguey is cooked in underground ovens heated by wood. Once it reaches the ideal temperature, it is ground using stone mills. Fermentation takes place in aluminum vats, and distillation takes place in copper stills with the fruit, then rests in a glass to preserve its magical flavor. "
+      },
+      {
+        "name": "Caminante Tequila",
+        "category": "Tequila ",
+        "origin": "Guadalajara, Jalisco ",
+        "distillation": "Copper still ",
+        "milling": "Milling train ",
+        "alcohol": "40% ",
+        "description": "Caminante originated in an area known as 'Los Altos de Jalisco'; a beautiful landscape surrounded by the blue flecks of the Tequilana agave. To create such a high-quality tequila in this privileged region, it requires patient waiting for up to ten years. From here, we begin a delicate process of honey production, extraction, fermentation, distillation, and a resting period of several months.  65, 66, 67]"
+      },
+      {
+        "name": "Huaco Agave Distillate",
+        "category": "Agave Distillate ",
+        "origin": "Jalisco México ",
+        "distillation": "Copper still ",
+        "milling": "Dough mill ",
+        "alcohol": "26% ",
+        "description": "Huaco is a unique Agave Distillate, 100% Mexican, with an innovative proposal of flavors, strawberry, pineapple, mango, tamarind, cucumber and some others. "
+      },
+      {
+        "name": "Cerveza Fortuna",
+        "category": "Craft Beer ",
+        "origin": "Guadalajara, Jalisco ",
+        "alcohol": "4.8% ",
+        "description": "Cerveza Fortuna was born from the union and friendship of four entrepreneurs passionate about beer, who sought to produce a high-quality product with a unique aroma and flavor that had never been offered before, to satisfy the most demanding palates. These Beers are made with dedication, insight, and respect, achieving the ideal product to enjoy the best moments accompanied by a beer.  97]"
+      }
+    ]
+  },
+  "agaveSpirits": {
+    "title": "The Art and Diversity of Agave Spirits ",
+    "spirits": [
+      {
+        "name": "Tequila ",
+        "description": "Born in the valleys and highlands of Jalisco, tequila is made exclusively from blue agave (Agave tequilana Weber). Its process is meticulous: slow cooking, natural fermentation, and double distillation. The result: fresh flavors, citrus and herbal notes, and a touch of sweetness.  33]"
+      },
+      {
+        "name": "Mezcal ",
+        "description": "Mezcal is Mexico's free spirit. It can be made from over 30 types of agave, such as espadín, tobalá, or madrecuixe, each bringing unique nuances. Its stone oven cooking gives it that unmistakable smoky touch. Mezcal is complex, earthy, floral, sometimes fruity, always surprising.  36]"
+      },
+      {
+        "name": "Raicilla ",
+        "description": "Raicilla is the best-kept secret of the coasts and mountains of Jalisco and Nayarit. It is mainly made from lechuguilla and maximiliana agave, using ancestral methods. Its profile is fresh, herbal, with citrus notes and a mineral finish.  39, 40]"
+      },
+      {
+        "name": "Sotol ",
+        "description": "Native to northern Mexico, sotol is distilled from the Dasylirion plant (not agave, but sharing its spirit). Its flavor is herbal, spicy, with hints of pepper and damp earth. It is the spirit of the desert, strong and elegant.  43, 44]"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to cross borders? ]",
+    "subtitle": "Contact our team to begin the journey.",
+    "mexico_office_title": "México Office",
+    "mexico_address": ["P.º de los Virreyes 45,", "Puerta de Hierro, 45116", "Zapopan, Jal."],
+    "mexico_phone": "Cel. 33 3569 9925 ]",
+    "usa_office_title": "USA Office",
+    "usa_address": ["1532 W Dove Ave Ste C, ]", "McAllen Tx 78504, ]", "Estados Unidos ]"],
+    "usa_phone": "Cel. 956 515 3043 ]"
+  },
+  "footer": {
+    "brandName": "Volcanic Spirits",
+    "copyright": "All rights reserved.",
+    "responsible_drinking": "DRINK RESPONSIBLY."
+  }
+}

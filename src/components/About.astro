@@ -1,0 +1,88 @@
+---
+// src/components/About.astro
+import { Image } from "astro:assets";
+import content from "../content/en.json";
+
+// Importamos las 3 imágenes que usaremos en esta sección
+import jimadorImage from "../assets/images/corteAgave.jpg";
+import agaveFieldImage from "../assets/images/pencas.jpg";
+import barrelsImage from "../assets/images/barriles.jpg";
+
+const { about } = content;
+---
+
+<section id="about" class="bg-background py-20 sm:py-24">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+      <div class="flex justify-center lg:order-last">
+        <Image
+          src={jimadorImage}
+          alt="A jimador working in an agave field"
+          quality="mid"
+          class="w-full max-w-lg object-cover rounded-lg shadow-xl"
+        />
+      </div>
+      <div class="text-left">
+        <h2 class="font-display text-4xl lg:text-5xl font-bold text-text" transition:animate="slide">
+          {about.title}
+        </h2>
+        <p class="font-body mt-6 text-lg text-text/80 leading-relaxed" transition:animate="slide">
+          {about.intro_p1}
+        </p>
+        <p class="font-body mt-4 text-lg text-text/80 leading-relaxed" transition:animate="slide">
+          {about.intro_p2}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="relative bg-cover bg-center bg-fixed py-40" style={{ backgroundImage: `url(${agaveFieldImage.src})` }}>
+  <div class="absolute inset-0 bg-black/50"></div>
+  <div class="relative z-10 text-center text-white max-w-4xl mx-auto px-6">
+    <h3 class="font-display text-4xl md:text-5xl font-bold" transition:animate="slide">{about.mission_title}</h3>
+    <p class="font-body mt-6 text-xl md:text-2xl leading-relaxed" transition:animate="slide">
+      {about.mission_p1}
+    </p>
+  </div>
+</section>
+
+<section class="bg-background py-20 sm:py-24">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+      <div class="flex justify-center">
+        <Image
+          src={barrelsImage}
+          alt="Barrels of tequila aging in a distillery"
+          quality="mid"
+          class="w-full max-w-lg object-cover rounded-lg shadow-xl"
+        />
+      </div>
+      <div class="text-left">
+        <h4 class="font-display text-3xl font-bold text-text">{about.what_we_do_title}</h4>
+        <ul class="mt-6 space-y-3 font-body text-text/80">
+          {
+            about.what_we_do_list.map((item) => (
+              <li class="flex items-start">
+                <svg
+                  class="w-5 h-5 mr-4 text-primary flex-shrink-0 mt-1.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                </svg>
+                <span>{item}</span>
+              </li>
+            ))
+          }
+        </ul>
+        <h4 class="font-display text-3xl font-bold text-text mt-12">{about.why_we_do_it_title}</h4>
+        <p class="font-body mt-6 text-lg text-text/80 leading-relaxed">
+          {about.why_we_do_it_p1}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
