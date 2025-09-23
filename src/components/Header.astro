@@ -4,6 +4,8 @@ import content from "../content/en.json";
 const { footer } = content;
 import logo from "../assets/logo-volcanic-black.png";
 import { Image } from "astro:assets";
+const { pathname } = Astro.url;
+const isSpanish = pathname.startsWith("/es");
 ---
 
 <header
@@ -17,10 +19,23 @@ import { Image } from "astro:assets";
       </a>
 
       <nav class="hidden md:flex space-x-8">
-        <a href="#about" class="font-body font-semibold text-text/70 hover:text-text transition-colors">About Us</a>
-        <a href="#portfolio" class="font-body font-semibold text-text/70 hover:text-text transition-colors">Portfolio</a
+        <a
+          href={isSpanish ? "/es#about" : "/#about"}
+          class="font-body font-semibold text-text/70 hover:text-text transition-colors">About Us</a
         >
-        <a href="#contact" class="font-body font-semibold text-text/70 hover:text-text transition-colors">Contact</a>
+        <a
+          href={isSpanish ? "/es#portfolio" : "/#portfolio"}
+          class="font-body font-semibold text-text/70 hover:text-text transition-colors">Portfolio</a
+        >
+        <a
+          href={isSpanish ? "/es#contact" : "/#contact"}
+          class="font-body font-semibold text-text/70 hover:text-text transition-colors">Contact</a
+        >
+        <div class="flex space-x-2 text-sm font-semibold">
+          <a href="/" class:list={[{ "text-text": !isSpanish, "text-text/50": isSpanish }]}>EN</a>
+          <span class="text-text/50">/</span>
+          <a href="/es" class:list={[{ "text-text": isSpanish, "text-text/50": !isSpanish }]}>ES</a>
+        </div>
       </nav>
 
       <div class="md:hidden">

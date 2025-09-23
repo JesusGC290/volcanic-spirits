@@ -3,6 +3,15 @@
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import logoWhite from "../assets/logo-volcanic-white.png";
+
+interface Props {
+  content: {
+    brandName: string;
+    copyright: string;
+    responsible_drinking: string;
+  };
+}
+const { content } = Astro.props;
 ---
 
 <footer class="bg-text">
@@ -26,11 +35,9 @@ import logoWhite from "../assets/logo-volcanic-white.png";
 
     <div class="mt-12 border-t border-accent/20"></div>
 
-    <div
-      class="mt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-background/60 space-y-4 sm:space-y-0"
-    >
-      <p>&copy; {new Date().getFullYear()} Volcanic Spirits. All rights reserved.</p>
-      <p class="font-bold">DRINK RESPONSIBLY.</p>
+    <div class="mt-8 flex ...">
+      <p>&copy; {new Date().getFullYear()} {content.brandName}. {content.copyright}</p>
+      <p class="font-bold">{content.responsible_drinking}</p>
     </div>
   </div>
 </footer>

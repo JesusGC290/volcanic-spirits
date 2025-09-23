@@ -1,14 +1,18 @@
 ---
 // src/components/About.astro
 import { Image } from "astro:assets";
-import content from "../content/en.json";
 
 // Importamos las 3 imágenes que usaremos en esta sección
 import jimadorImage from "../assets/images/corteAgave.jpg";
 import agaveFieldImage from "../assets/images/pencas.jpg";
 import barrelsImage from "../assets/images/barriles.jpg";
 
-const { about } = content;
+// CAMBIO CLAVE: Ya no importamos 'en.json'. Ahora definimos las props que recibimos.
+interface Props {
+  content: any; // Podríamos definir una estructura más estricta, pero 'any' funciona bien.
+}
+// Recibimos 'content' desde Astro.props y lo renombramos a 'about' para que el resto del código no cambie.
+const { content: about } = Astro.props;
 ---
 
 <section id="about" class="bg-background py-20 sm:py-24">
@@ -62,7 +66,7 @@ const { about } = content;
         <h4 class="font-display text-3xl font-bold text-text animate-on-scroll">{about.what_we_do_title}</h4>
         <ul class="mt-6 space-y-3 font-body text-text/80 animate-on-scroll">
           {
-            about.what_we_do_list.map((item) => (
+            about.what_we_do_list.map((item: any) => (
               <li class="flex items-start">
                 <svg
                   class="w-5 h-5 mr-4 text-primary flex-shrink-0 mt-1.5"

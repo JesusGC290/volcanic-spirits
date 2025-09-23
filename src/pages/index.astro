@@ -6,16 +6,15 @@ import About from "../components/About.astro";
 import Portfolio from "../components/Portfolio.astro";
 import AgaveSpirits from "../components/AgaveSpirits.astro";
 import Contact from "../components/Contact.astro";
-import Footer from "../components/Footer.astro";
+import enContent from "../content/en.json";
 ---
 
-<Layout title="Volcanic Spirits - Connecting Worlds, Sharing Spirits">
+<Layout title="Volcanic Spirits - Connecting Worlds, Sharing Spirits" lang="en" footerContent={enContent.footer}>
   <main>
-    <Hero />
-    <About />
-    <Portfolio />
-    <AgaveSpirits />
-    <Contact />
+    <Hero content={enContent.hero} />
+    <About content={enContent.about} />
+    <Portfolio content={enContent.portfolio} />
+    <AgaveSpirits content={enContent.agaveSpirits} />
+    <Contact cta={enContent.cta} forms={enContent.forms} />
   </main>
-  <Footer />
 </Layout>

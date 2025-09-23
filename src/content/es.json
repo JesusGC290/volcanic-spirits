@@ -1,0 +1,107 @@
+{
+  "hero": {
+    "title": "Conectando Mundos, Compartiendo Destilados.",
+    "subtitle": "Llevamos auténticos destilados mexicanos al corazón de los Estados Unidos, conectando un mundo de tradición con nuevos paladares.",
+    "cta_button": "Explora Nuestro Portafolio"
+  },
+  "about": {
+    "title": "Sobre Volcanic Spirits",
+    "intro_p1": "Somos un equipo con más de una década de experiencia en comercio internacional y un profundo amor por los destilados mexicanos.",
+    "intro_p2": "En Volcanic Spirits, creemos que cada gota de destilado mexicano es una historia viva: la fuerza del suelo volcánico, la paciencia del agave, la maestría de manos expertas y la herencia de generaciones.",
+    "mission_title": "Nuestra Misión",
+    "mission_p1": "Nuestra misión es distribuir y comercializar Destilados Premium con historia e identidad en los destinos comerciales más deseados.",
+    "what_we_do_title": "Qué Hacemos",
+    "what_we_do_list": [
+      "Asesoría regulatoria, etiquetado y cumplimiento legal (TTB, FDA, empaquetado, etc).",
+      "Desarrollo y adaptación de marca para el mercado estadounidense.",
+      "Estrategias de promoción, marketing y alianzas comerciales.",
+      "Importación y distribución con socios confiables en EE.UU."
+    ],
+    "why_we_do_it_title": "Por Qué lo Hacemos",
+    "why_we_do_it_p1": "Porque nos mueve la pasión. Porque sabemos que detrás de cada botella hay una historia que merece ser contada y compartida.",
+    "why_we_do_it_p2": "Queremos que el mundo conozca la autenticidad, calidad y el arte en cada producto mexicano."
+  },
+  "portfolio": {
+    "title": "Nuestro Portafolio",
+    "subtitle": "Acompañamos a las marcas mexicanas en su viaje internacional, del sueño a la realidad.",
+    "brands": [
+      {
+        "name": "YULIIA Mezcal",
+        "category": "Mezcal y Licores de Sabores",
+        "origin": "Oaxaca, México",
+        "distillation": "Alambique de Cobre",
+        "milling": "Molino de Piedra",
+        "alcohol": "40%/18%",
+        "description": "Nuestro mezcal lleva la clasificación artesanal por su método de elaboración que data de nuestros ancestros. Para obtener nuestro mezcal artesanal, el maguey es cocido en hornos cónicos de piedra calentados a leña. Una vez que llega a la temperatura ideal, es molido con molinos de piedra. La fermentación se realiza en tinas de aluminio y la destilación en alambiques de cobre con la fruta, para después reposar en vidrio y conservar su mágico sabor."
+      },
+      {
+        "name": "Caminante Tequila",
+        "category": "Tequila",
+        "origin": "Guadalajara, Jalisco",
+        "distillation": "Alambique de Cobre",
+        "milling": "Tren de molienda",
+        "alcohol": "40%",
+        "description": "Caminante tiene su origen en una zona conocida como 'Los Altos de Jalisco'; un hermoso paisaje rodeado por los destellos azules del agave Tequilana. Para crear un tequila de tan alta calidad en esta privilegiada región, se requiere una paciente espera de hasta diez años. A partir de aquí, comenzamos un delicado proceso de producción de miel, extracción, fermentación, destilación y un periodo de reposo de varios meses."
+      },
+      {
+        "name": "Huaco Agave Distillate",
+        "category": "Destilado de Agave",
+        "origin": "Jalisco, México",
+        "distillation": "Alambique de Cobre",
+        "milling": "Molino de masa",
+        "alcohol": "26%",
+        "description": "Huaco es un Destilado de Agave único, 100% mexicano, con una innovadora propuesta de sabores: fresa, piña, mango, tamarindo, pepino y algunos otros."
+      },
+      {
+        "name": "Cerveza Fortuna",
+        "category": "Cerveza Artesanal",
+        "origin": "Guadalajara, Jalisco",
+        "alcohol": "4.8%",
+        "description": "Cerveza Fortuna nace de la unión y amistad de cuatro empresarios apasionados por la cerveza, que buscaban producir un producto de alta calidad con un aroma y sabor únicos que nunca antes se había ofrecido, para satisfacer a los paladares más exigentes. Estas cervezas se elaboran con dedicación, perspicacia y respeto, logrando el producto ideal para disfrutar de los mejores momentos acompañado de una cerveza."
+      }
+    ]
+  },
+  "agaveSpirits": {
+    "title": "El Arte y la Diversidad de los Destilados de Agave",
+    "spirits": [
+      {
+        "name": "Tequila",
+        "description": "Nacido en los valles y altos de Jalisco, el tequila se elabora exclusivamente con agave azul (Agave tequilana Weber). Su proceso es meticuloso: cocción lenta, fermentación natural y doble destilación. El resultado: sabores frescos, notas cítricas y herbales, y un toque de dulzura."
+      },
+      {
+        "name": "Mezcal",
+        "description": "El mezcal es el espíritu libre de México. Se puede elaborar con más de 30 tipos de agave, como espadín, tobalá o madrecuixe, cada uno aportando matices únicos. Su cocción en horno de piedra le da ese inconfundible toque ahumado. El mezcal es complejo, terroso, floral, a veces afrutado, siempre sorprendente."
+      },
+      {
+        "name": "Raicilla",
+        "description": "La raicilla es el secreto mejor guardado de las costas y montañas de Jalisco y Nayarit. Se elabora principalmente con agave lechuguilla y maximiliana, utilizando métodos ancestrales. Su perfil es fresco, herbal, con notas cítricas y un final mineral."
+      },
+      {
+        "name": "Sotol",
+        "description": "Originario del norte de México, el sotol se destila de la planta Dasylirion (no es un agave, pero comparte su espíritu). Su sabor es herbal, especiado, con toques de pimienta y tierra húmeda. Es el espíritu del desierto, fuerte y elegante."
+      }
+    ]
+  },
+  "cta": {
+    "title": "¿Listos para cruzar fronteras?",
+    "subtitle": "Contacta a nuestro equipo para comenzar el viaje.",
+    "mexico_office_title": "Oficina en México",
+    "mexico_address": ["P.º de los Virreyes 45,", "Puerta de Hierro, 45116", "Zapopan, Jal."],
+    "mexico_phone": "Cel. 33 3569 9925",
+    "usa_office_title": "Oficina en EE.UU.",
+    "usa_address": ["1532 W Dove Ave Ste C,", "McAllen Tx 78504,", "Estados Unidos"],
+    "usa_phone": "Cel. 956 515 3043"
+  },
+  "forms": {
+    "importer_tab": "Para Importadores y Distribuidores",
+    "exporter_tab": "Para Productores y Exportadores",
+    "hubspot_portal_id": "50431399",
+    "importer_form_id": "ID_DEL_FORMULARIO_IMPORTER_EN_ESPAÑOL",
+    "exporter_form_id": "ID_DEL_FORMULARIO_EXPORTER_EN_ESPAÑOL"
+  },
+  "footer": {
+    "brandName": "Volcanic Spirits",
+    "copyright": "Todos los derechos reservados.",
+    "responsible_drinking": "BEBE CON RESPONSABILIDAD."
+  }
+}

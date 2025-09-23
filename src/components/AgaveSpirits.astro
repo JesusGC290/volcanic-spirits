@@ -1,10 +1,13 @@
 ---
 // src/components/AgaveSpirits.astro
 import { Image } from "astro:assets";
-import content from "../content/en.json";
 import agaveArtImage from "../assets/images/diversity.jpg";
 
-const { agaveSpirits } = content;
+// CAMBIO CLAVE: Recibimos el contenido desde las props
+interface Props {
+  content: any;
+}
+const { content: agaveSpirits } = Astro.props;
 ---
 
 <section id="education" class="bg-background py-20 sm:py-24">
@@ -26,7 +29,7 @@ const { agaveSpirits } = content;
 
       <div class="flex flex-col gap-16">
         {
-          agaveSpirits.spirits.map((spirit) => (
+          agaveSpirits.spirits.map((spirit: any) => (
             <div class="animate-on-scroll">
               <h3 class="font-display text-3xl font-bold text-text">{spirit.name}</h3>
               <p class="font-body mt-4 text-lg text-text/80 leading-relaxed">{spirit.description}</p>

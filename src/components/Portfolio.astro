@@ -1,7 +1,13 @@
 ---
 // src/components/Portfolio.astro
 import { Image } from "astro:assets";
-import content from "../content/en.json";
+
+// CAMBIO CLAVE: Ya no importamos 'en.json'. Definimos las props que vamos a recibir.
+interface Props {
+  content: any;
+}
+// Recibimos 'content' y lo renombramos a 'portfolio' para que el resto del código no cambie.
+const { content: portfolio } = Astro.props;
 
 // Importamos TODAS las imágenes que usaremos en el portafolio
 import caminanteImage from "../assets/images/tequila-op.png";
@@ -13,11 +19,11 @@ import huacoBgImage from "../assets/images/mix.jpg";
 import fortunaImage from "../assets/images/fortuna.png";
 import fortunaBgImage from "../assets/images/preparation.jpg";
 
-const { portfolio } = content;
-const caminanteData = portfolio.brands.find((brand) => brand.name === "Caminante Tequila");
-const yuliiaData = portfolio.brands.find((brand) => brand.name === "YULIIA Mezcal");
-const huacoData = portfolio.brands.find((brand) => brand.name === "Huaco Agave Distillate");
-const fortunaData = portfolio.brands.find((brand) => brand.name === "Cerveza Fortuna");
+// Esta lógica ahora funciona con el 'portfolio' que viene de las props.
+const caminanteData = portfolio.brands.find((brand: any) => brand.name === "Caminante Tequila");
+const yuliiaData = portfolio.brands.find((brand: any) => brand.name === "YULIIA Mezcal");
+const huacoData = portfolio.brands.find((brand: any) => brand.name === "Huaco Agave Distillate");
+const fortunaData = portfolio.brands.find((brand: any) => brand.name === "Cerveza Fortuna");
 ---
 
 <section id="portfolio" class="bg-accent">

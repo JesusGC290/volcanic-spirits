@@ -1,0 +1,21 @@
+---
+// src/pages/es/index.astro
+import Layout from "../../layouts/Layout.astro";
+import esContent from "../../content/es.json";
+
+import Hero from "../../components/Hero.astro";
+import About from "../../components/About.astro";
+import Portfolio from "../../components/Portfolio.astro";
+import AgaveSpirits from "../../components/AgaveSpirits.astro";
+import Contact from "../../components/Contact.astro";
+---
+
+<Layout title="Volcanic Spirits - Conectando Mundos..." lang="es" footerContent={esContent.footer}>
+  <main>
+    <Hero content={esContent.hero} />
+    <About content={esContent.about} />
+    <Portfolio content={esContent.portfolio} />
+    <AgaveSpirits content={esContent.agaveSpirits} />
+    <Contact cta={esContent.cta} forms={esContent.forms} />
+  </main>
+</Layout>
