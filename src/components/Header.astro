@@ -1,0 +1,73 @@
+---
+// src/components/Header.astro
+import content from "../content/en.json";
+const { footer } = content;
+import logo from "../assets/logo-volcanic-black.png";
+import { Image } from "astro:assets";
+---
+
+<header
+  id="main-header"
+  class="fixed top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-sm border-b border-accent"
+>
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <a href="#" class="block h-10 w-auto">
+        <Image src={logo} alt="Volcanic Spirits Logo" quality="high" class="h-full w-auto" />
+      </a>
+
+      <nav class="hidden md:flex space-x-8">
+        <a href="#about" class="font-body font-semibold text-text/70 hover:text-text transition-colors">About Us</a>
+        <a href="#portfolio" class="font-body font-semibold text-text/70 hover:text-text transition-colors">Portfolio</a
+        >
+        <a href="#contact" class="font-body font-semibold text-text/70 hover:text-text transition-colors">Contact</a>
+      </nav>
+
+      <div class="md:hidden">
+        <button id="mobile-menu-button" class="p-2 -mr-2" aria-label="Open menu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            class="w-6 h-6 text-text"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden absolute top-full left-0 w-full bg-background border-b border-accent shadow-lg"
+  >
+    <div class="px-6 py-4 flex flex-col space-y-4">
+      <a href="#about" class="font-body font-semibold text-text/80 hover:text-text">About Us</a>
+      <a href="#portfolio" class="font-body font-semibold text-text/80 hover:text-text">Portfolio</a>
+      <a href="#contact" class="font-body font-semibold text-text/80 hover:text-text">Contact</a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // Opcional: Cerrar el menú si se hace clic en un enlace
+    const links = mobileMenu.querySelectorAll("a");
+    links.forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+    });
+  }
+</script>

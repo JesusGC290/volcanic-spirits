@@ -41,10 +41,15 @@
   --color-background: #f8f9fa; /* Un gris muy claro, casi blanco */
   --color-text: #121212; /* Un negro suave, no tan duro como el #000 */
   --color-accent: #e9ecef; /* Un gris ligero para bordes o fondos sutiles */
+  --color-primary: #e86a33;
 
   /* ✒️ Tipografía */
   --font-display: "Black Mango", serif;
   --font-body: "Inter", "sans-serif";
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* Ajusta este valor si tu header es más alto o más bajo */
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -53,4 +58,22 @@
 .no-scrollbar {
   -ms-overflow-style: none; /* IE y Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+/* --- Estilos de Componentes Globales (Optimizado) --- */
+.tab-button {
+  border-color: transparent;
+  color: var(--color-text); /* <-- Usa el color de texto principal */
+  opacity: 0.6; /* <-- Lo hace ver inactivo */
+  transition: all 0.2s ease-in-out;
+}
+.tab-button.is-active {
+  border-color: var(--color-primary); /* <-- Usa el color primario */
+  color: var(--color-text);
+  opacity: 1; /* <-- Opacidad completa para el activo */
+  background-color: var(--color-background);
+}
+.tab-button:not(.is-active):hover {
+  border-color: var(--color-accent); /* <-- Borde sutil en hover */
+  opacity: 1;
 }

@@ -83,7 +83,7 @@
     ]
   },
   "cta": {
-    "title": "Ready to cross borders? ]",
+    "title": "Ready to cross borders?",
     "subtitle": "Contact our team to begin the journey.",
     "mexico_office_title": "México Office",
     "mexico_address": ["P.º de los Virreyes 45,", "Puerta de Hierro, 45116", "Zapopan, Jal."],
@@ -91,6 +91,13 @@
     "usa_office_title": "USA Office",
     "usa_address": ["1532 W Dove Ave Ste C, ]", "McAllen Tx 78504, ]", "Estados Unidos ]"],
     "usa_phone": "Cel. 956 515 3043 ]"
+  },
+  "forms": {
+    "importer_tab": "For Importers & Distributors",
+    "exporter_tab": "For Producers & Exporters",
+    "hubspot_portal_id": "50431399",
+    "importer_form_id": "f99cd61a-9646-4722-b45e-9bc452a620dd",
+    "exporter_form_id": "d2b3d9c2-89a3-46b3-ad98-566f1d9f2906"
   },
   "footer": {
     "brandName": "Volcanic Spirits",

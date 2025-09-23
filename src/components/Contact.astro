@@ -1,0 +1,162 @@
+---
+// src/components/Contact.astro
+import content from "../content/en.json";
+const { cta, forms } = content;
+---
+
+<section
+  id="contact"
+  class="bg-accent py-20 sm:py-24"
+  data-portal-id={forms.hubspot_portal_id}
+  data-importer-form-id={forms.importer_form_id}
+  data-exporter-form-id={forms.exporter_form_id}
+>
+  <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+    <h2 class="font-display text-4xl lg:text-5xl font-bold text-text animate-on-scroll">
+      {cta.title}
+    </h2>
+    <p class="mt-4 font-body text-lg text-text/70 animate-on-scroll">
+      {cta.subtitle}
+    </p>
+
+    <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-10 text-left">
+      <div class="font-body text-text/90 animate-on-scroll">
+        <div class="flex items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            class="w-5 h-5 mr-3 text-primary"
+            ><path
+              fill-rule="evenodd"
+              d="M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.1.4-.27.662-.515C12.022 17.527 14 15.318 14 12a4 4 0 00-8 0c0 3.318 1.978 5.527 3.07 6.276.261.245.475.415.662.515a5.741 5.741 0 00.281.14l.018.008.006.003zM10 11.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z"
+              clip-rule="evenodd"></path></svg
+          >
+          <h3 class="font-bold text-lg">{cta.mexico_office_title}</h3>
+        </div>
+        <address class="mt-2 pl-8 not-italic border-l border-accent/20 ml-2.5">
+          {cta.mexico_address.map((line) => <p>{line}</p>)}
+          <a
+            href={`tel:${cta.mexico_phone.replace(/\D/g, "")}`}
+            class="mt-2 inline-block hover:text-primary transition-colors">{cta.mexico_phone}</a
+          >
+        </address>
+      </div>
+
+      <div class="font-body text-text/90 animate-on-scroll">
+        <div class="flex items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            class="w-5 h-5 mr-3 text-primary"
+            ><path
+              fill-rule="evenodd"
+              d="M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.1.4-.27.662-.515C12.022 17.527 14 15.318 14 12a4 4 0 00-8 0c0 3.318 1.978 5.527 3.07 6.276.261.245.475.415.662.515a5.741 5.741 0 00.281.14l.018.008.006.003zM10 11.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z"
+              clip-rule="evenodd"></path></svg
+          >
+          <h3 class="font-bold text-lg">{cta.usa_office_title}</h3>
+        </div>
+        <address class="mt-2 pl-8 not-italic border-l border-accent/20 ml-2.5">
+          {cta.usa_address.map((line) => <p>{line}</p>)}
+          <a
+            href={`tel:+1${cta.usa_phone.replace(/\D/g, "")}`}
+            class="mt-2 inline-block hover:text-primary transition-colors">{cta.usa_phone}</a
+          >
+        </address>
+      </div>
+    </div>
+
+    <div class="mt-20">
+      <nav class="-mb-px flex space-x-6 justify-center py-4" id="form-tabs">
+        <button
+          data-form="importer"
+          class="tab-button is-active whitespace-nowrap py-4 px-1 border-b-2 font-body font-bold text-lg w-full"
+        >
+          {forms.importer_tab}
+        </button>
+        <button
+          data-form="exporter"
+          class="tab-button whitespace-nowrap py-4 px-1 border-b-2 font-body font-bold text-lg w-full"
+        >
+          {forms.exporter_tab}
+        </button>
+      </nav>
+    </div>
+
+    <div class="mt-8 text-left min-h-[400px]">
+      <div id="importer-form-container"></div>
+      <div id="exporter-form-container" class="hidden"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const contactSection = document.getElementById("contact") as HTMLElement;
+    const tabsContainer = document.getElementById("form-tabs");
+    const importerContainer = document.getElementById("importer-form-container");
+    const exporterContainer = document.getElementById("exporter-form-container");
+
+    if (!contactSection || !tabsContainer || !importerContainer || !exporterContainer) {
+      return;
+    }
+
+    // El script ahora SÍ puede leer los IDs desde el HTML
+    const portalId = contactSection.dataset.portalId;
+    const importerFormId = contactSection.dataset.importerFormId;
+    const exporterFormId = contactSection.dataset.exporterFormId;
+
+    let hubspotScriptLoaded = false;
+    let exporterFormCreated = false;
+
+    function loadHubspotScript(callback: () => void) {
+      if (hubspotScriptLoaded) {
+        callback();
+        return;
+      }
+      const script = document.createElement("script");
+      script.src = "//js.hsforms.net/forms/embed/v2.js";
+      script.type = "text/javascript";
+      script.charset = "utf-8";
+      script.onload = callback;
+      document.head.appendChild(script);
+      hubspotScriptLoaded = true;
+    }
+
+    function createForm(formId: string | undefined, targetId: string) {
+      if (!portalId || !formId) return; // Chequeo de seguridad
+      // @ts-ignore
+      hbspt.forms.create({
+        region: "na1",
+        portalId: portalId,
+        formId: formId,
+        target: `#${targetId}`,
+      });
+    }
+
+    const buttons = tabsContainer.querySelectorAll<HTMLButtonElement>(".tab-button");
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        buttons.forEach((btn) => btn.classList.remove("is-active"));
+        button.classList.add("is-active");
+
+        if (button.dataset.form === "importer") {
+          importerContainer.classList.remove("hidden");
+          exporterContainer.classList.add("hidden");
+        } else {
+          importerContainer.classList.add("hidden");
+          exporterContainer.classList.remove("hidden");
+          if (!exporterFormCreated) {
+            createForm(exporterFormId, "exporter-form-container");
+            exporterFormCreated = true;
+          }
+        }
+      });
+    });
+
+    loadHubspotScript(() => {
+      createForm(importerFormId, "importer-form-container");
+    });
+  });
+</script>
