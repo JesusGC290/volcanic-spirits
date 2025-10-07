@@ -1,11 +1,14 @@
 ---
 // src/components/Header.astro
-import content from "../content/en.json";
-const { footer } = content;
 import logo from "../assets/logo-volcanic-black.png";
 import { Image } from "astro:assets";
 const { pathname } = Astro.url;
 const isSpanish = pathname.startsWith("/es");
+
+interface Props {
+  nav: { about: string; portfolio: string; contact: string };
+}
+const { nav } = Astro.props;
 ---
 
 <header
@@ -21,15 +24,15 @@ const isSpanish = pathname.startsWith("/es");
       <nav class="hidden md:flex space-x-8">
         <a
           href={isSpanish ? "/es#about" : "/#about"}
-          class="font-body font-semibold text-text/70 hover:text-text transition-colors">About Us</a
+          class="font-body font-semibold text-text/70 hover:text-text transition-colors">{nav.about}</a
         >
         <a
           href={isSpanish ? "/es#portfolio" : "/#portfolio"}
-          class="font-body font-semibold text-text/70 hover:text-text transition-colors">Portfolio</a
+          class="font-body font-semibold text-text/70 hover:text-text transition-colors">{nav.portfolio}</a
         >
         <a
           href={isSpanish ? "/es#contact" : "/#contact"}
-          class="font-body font-semibold text-text/70 hover:text-text transition-colors">Contact</a
+          class="font-body font-semibold text-text/70 hover:text-text transition-colors">{nav.contact}</a
         >
         <div class="flex space-x-2 text-sm font-semibold">
           <a href="/" class:list={[{ "text-text": !isSpanish, "text-text/50": isSpanish }]}>EN</a>
@@ -61,9 +64,9 @@ const isSpanish = pathname.startsWith("/es");
     class="hidden md:hidden absolute top-full left-0 w-full bg-background border-b border-accent shadow-lg"
   >
     <div class="px-6 py-4 flex flex-col space-y-4">
-      <a href="#about" class="font-body font-semibold text-text/80 hover:text-text">About Us</a>
-      <a href="#portfolio" class="font-body font-semibold text-text/80 hover:text-text">Portfolio</a>
-      <a href="#contact" class="font-body font-semibold text-text/80 hover:text-text">Contact</a>
+      <a href="#about" class="font-body font-semibold text-text/80 hover:text-text">{nav.about}</a>
+      <a href="#portfolio" class="font-body font-semibold text-text/80 hover:text-text">{nav.portfolio}</a>
+      <a href="#contact" class="font-body font-semibold text-text/80 hover:text-text">{nav.contact}</a>
     </div>
   </div>
 </header>

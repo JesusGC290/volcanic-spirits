@@ -2,6 +2,7 @@
 // src/pages/es/index.astro
 import Layout from "../../layouts/Layout.astro";
 import esContent from "../../content/es.json";
+import Header from "../../components/Header.astro";
 
 import Hero from "../../components/Hero.astro";
 import About from "../../components/About.astro";
@@ -11,6 +12,7 @@ import Contact from "../../components/Contact.astro";
 ---
 
 <Layout title="Volcanic Spirits - Conectando Mundos..." lang="es" footerContent={esContent.footer}>
+  <Header nav={esContent.nav} />
   <main>
     <Hero content={esContent.hero} />
     <About content={esContent.about} />

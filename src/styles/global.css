@@ -42,6 +42,7 @@
   --color-text: #121212; /* Un negro suave, no tan duro como el #000 */
   --color-accent: #e9ecef; /* Un gris ligero para bordes o fondos sutiles */
   --color-primary: #e86a33;
+  --color-wood: #d2b48c; /* Un color madera claro para fondos especiales */
 
   /* ✒️ Tipografía */
   --font-display: "Black Mango", serif;

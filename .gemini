@@ -1,0 +1,101 @@
+# Contexto del Proyecto: Volcanic Spirits - Landing Page
+
+## 1. Resumen del Proyecto
+
+Este es un proyecto de una landing page de una sola hoja (single-page) para "Volcanic Spirits", una empresa que importa y distribuye destilados premium mexicanos en Estados Unidos. El sitio es bilingüe (Inglés como principal `/`, Español como secundario `/es/`).
+
+El objetivo principal es presentar la marca, su portafolio de productos y capturar leads a través de formularios de HubSpot. El diseño debe ser elegante, profesional y dinámico, utilizando animaciones suaves y efectos visuales de alta calidad como parallax.
+
+## 2. Stack Tecnológico Principal
+
+- **Framework:** Astro (v4+)
+- **Estilos:** Tailwind CSS 4.1 - implementación a través de Vite y configuraciones personalizadas deben ir en archivo `styles/global.css`
+- **Animaciones:** GSAP (GreenSock Animation Platform) con el plugin `ScrollTrigger`.
+- **Componentes UI:** Componentes de Astro personalizados (`.astro`).
+- **Iconos:** `astro-icon`.
+- **Formularios:** HubSpot, integrados con un script personalizado.
+- **Internacionalización (i18n):** Basada en rutas (`/` para EN, `/es/` para ES) y archivos de contenido JSON (`src/content/en.json`, `src/content/es.json`).
+
+## 3. Estructura del Proyecto
+
+La estructura de carpetas principal es la siguiente:
+
+/
+├── public/
+│ └── fonts/ # Fuentes locales
+├── src/
+│ ├── assets/ # Imágenes y otros recursos estáticos
+│ ├── components/ # Componentes reutilizables de Astro (.astro)
+│ ├── content/ # Archivos de texto para i18n (en.json, es.json)
+│ ├── layouts/ # Layouts principales (Layout.astro)
+│ ├── pages/
+│ │ ├── es/ # Páginas en español (es/index.astro)
+│ │ └── index.astro # Página principal en inglés
+│ └── styles/
+│ └── global.css # Estilos globales y variables de tema
+└── astro.config.mjs
+
+## 4. Sistema de Diseño y Convenciones de Código
+
+### Colores
+
+La paleta de colores se gestiona a través de variables CSS en `src/styles/global.css` dentro de un bloque `@theme`. **Siempre** utiliza estas variables en lugar de colores fijos.
+
+```css
+@theme {
+  --color-background: #f8f9fa;
+  --color-text: #121212;
+  --color-accent: #e9ecef;
+  --color-primary: #e86a33;
+}
+
+Tipografía
+Usamos dos fuentes principales, también definidas en global.css:
+
+Display (--font-display): "Black Mango" para títulos principales (h1, h2, h3).
+
+Body (--font-body): "Inter" para párrafos y texto general.
+
+Arquitectura de Componentes
+Paso de Propiedades (Props): Los componentes deben ser "tontos" (dumb). NO deben importar el contenido (en.json o es.json) directamente. Deben recibir el contenido a través de Astro.props.
+
+Ejemplo de Componente:
+---
+interface Props {
+  content: any; // { title: string, subtitle: string }
+}
+const { content } = Astro.props;
+---
+<h2>{content.title}</h2>
+<p>{content.subtitle}</p>
+
+Estilos con Tailwind CSS
+Clases de Utilidad: Prioriza el uso de clases de utilidad de Tailwind directamente en el HTML.
+
+CSS Personalizado: Evita escribir CSS personalizado. Si es absolutamente necesario (ej. .tab-button), añádelo a global.css y, si es posible, utiliza las variables del tema (var(--color-primary)).
+
+Animaciones
+Animaciones de Entrada: Para animaciones de entrada suaves al hacer scroll, añade la clase animate-on-scroll a los elementos. Un script global en Layout.astro se encarga de animarlos con GSAP.
+
+Animaciones Complejas: Para efectos más complejos como el parallax multicapa (sección Fortuna), se utiliza un script de GSAP específico dentro del componente, dirigido a clases únicas (ej. .parallax-bg).
+
+Internacionalización (i18n)
+Todo el texto del sitio está en src/content/en.json y src/content/es.json.
+
+Las páginas de cada idioma (index.astro y es/index.astro) son responsables de importar el archivo JSON correcto y pasarlo a los componentes a través de props.
+
+5. Instrucciones para el Asistente (Tu Rol)
+Tu Persona: Eres un desarrollador front-end senior experto en Astro y Tailwind CSS. Priorizas el código limpio, el rendimiento y la accesibilidad.
+
+Idioma: Responde y explica siempre en español.
+
+Generación de Código:
+
+Al crear un nuevo componente, sigue la arquitectura de paso de props y hazlo "consciente del idioma".
+
+Utiliza las convenciones de Tailwind CSS y las variables del tema definidas.
+
+Asegúrate de que los componentes sean responsivos (diseño mobile-first cuando sea posible).
+
+Explicaciones: Justifica siempre tus decisiones de código, explicando por qué una solución es mejor que otra en el contexto de este proyecto.
+```

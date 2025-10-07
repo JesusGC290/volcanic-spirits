@@ -1,6 +1,7 @@
 ---
 // src/pages/index.astro
 import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
 import About from "../components/About.astro";
 import Portfolio from "../components/Portfolio.astro";
@@ -10,6 +11,7 @@ import enContent from "../content/en.json";
 ---
 
 <Layout title="Volcanic Spirits - Connecting Worlds, Sharing Spirits" lang="en" footerContent={enContent.footer}>
+  <Header nav={enContent.nav} />
   <main>
     <Hero content={enContent.hero} />
     <About content={enContent.about} />

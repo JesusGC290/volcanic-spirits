@@ -49,22 +49,58 @@ const fortunaData = portfolio.brands.find((brand: any) => brand.name === "Cervez
     >
       <div class="absolute inset-0 bg-black/60" />
       <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div class="flex justify-center animate-on-scroll">
+        <div class="grid grid-cols-1 lg:grid-cols-5 items-center gap-8 lg:gap-0">
+          <div class="lg:col-span-3 animate-on-scroll">
+            <div class="bg-background/80 backdrop-blur-sm p-8 md:p-10 rounded-lg shadow-xl text-text">
+              <h3 class="font-display text-4xl md:text-6xl font-bold">{caminanteData.name}</h3>
+              <div class="w-24 h-1 bg-primary mt-4" />
+              <div class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-4 text-sm font-body uppercase tracking-wider">
+                <p>
+                  <>
+                    <strong>Category:</strong>
+                    <br />
+                  </>{" "}
+                  {caminanteData.category}
+                </p>
+                <p>
+                  <>
+                    <strong>Origin:</strong>
+                    <br />
+                  </>{" "}
+                  {caminanteData.origin}
+                </p>
+                <p>
+                  <>
+                    <strong>Alcohol:</strong>
+                    <br />
+                  </>{" "}
+                  {caminanteData.alcohol}
+                </p>
+                <p>
+                  <>
+                    <strong>Distillation:</strong>
+                    <br />
+                  </>{" "}
+                  {caminanteData.distillation}
+                </p>
+                <p>
+                  <>
+                    <strong>Milling:</strong>
+                    <br />
+                  </>{" "}
+                  {caminanteData.milling}
+                </p>
+              </div>
+              <p class="font-body mt-8 text-lg text-text/80 leading-relaxed">{caminanteData.description}</p>
+            </div>
+          </div>
+          <div class="lg:col-span-2 flex justify-center animate-on-scroll order-first lg:order-last">
             <Image
               src={caminanteImage}
               alt={`Bottle of ${caminanteData.name}`}
               quality="high"
               class="h-full max-h-[550px] w-auto drop-shadow-2xl"
             />
-          </div>
-          <div class="text-background animate-on-scroll">
-            <h3 class="font-display text-5xl md:text-6xl font-bold">{caminanteData.name}</h3>
-            <div class="w-24 h-1 bg-primary mt-4" />
-            <div class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-4 text-sm font-body uppercase tracking-wider">
-              {/*...specs...*/}
-            </div>
-            <p class="font-body mt-8 text-lg text-background/80 leading-relaxed">{caminanteData.description}</p>
           </div>
         </div>
       </div>
@@ -74,26 +110,60 @@ const fortunaData = portfolio.brands.find((brand: any) => brand.name === "Cervez
 
 {
   huacoData && (
-    <section class="bg-background py-20 sm:py-24">
-      <div class="relative flex justify-center items-center max-w-7xl mx-auto">
-        <div class="w-full lg:w-4/5 px-6 lg:px-0 z-0 animate-on-scroll">
-          <Image
-            src={huacoBgImage}
-            alt={`Ambiance for ${huacoData.name}`}
-            quality="high"
-            class="rounded-lg shadow-2xl shadow-secondary/20"
-          />
-        </div>
-        <div class="w-11/12 md:w-1/2 lg:w-[40%] p-8 md:p-10 bg-black/80 backdrop-blur-sm border border-secondary rounded-lg text-background relative -mt-24 lg:absolute lg:mt-0 lg:left-0 lg:top-1/2 lg:-translate-y-1/2 z-10 animate-on-scroll">
-          <h3 class="font-display text-4xl font-bold">{huacoData.name}</h3>
-          <p class="font-body mt-4 text-lg text-background/80 leading-relaxed">{huacoData.description}</p>
-        </div>
-        <div class="hidden lg:block absolute top-1/2 -translate-y-1/2 right-0 lg:right-16 w-auto h-[110%] z-20 animate-on-scroll">
-          <Image
-            src={huacoImage}
-            alt={`Bottle of ${huacoData.name}`}
-            class="h-full max-h-[550px] w-auto drop-shadow-2xl"
-          />
+    <section id="huaco-parallax" class="bg-[var(--color-wood)] py-20 sm:py-24 lg:h-[800px] lg:py-0">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 h-full">
+        {/* Contenedor principal que cambia de flex-col a un layout relativo en desktop */}
+        <div class="flex flex-col lg:relative items-center justify-center h-full">
+          {/* Imagen de fondo (solo para desktop) */}
+          <div class="parallax-bg hidden lg:block lg:absolute w-full lg:w-4/5 h-[600px]">
+            <Image
+              src={huacoBgImage}
+              alt={`Ambiance for ${huacoData.name}`}
+              quality="high"
+              class="rounded-lg shadow-2xl shadow-accent/50 h-full w-full object-cover"
+            />
+          </div>
+
+          {/* Botella (visible en móvil y desktop) */}
+          <div class="parallax-bottle w-2/3 sm:w-1/3 lg:absolute lg:inset-0 lg:flex lg:items-center lg:justify-start lg:w-auto animate-on-scroll lg:animate-none">
+            <Image
+              src={huacoImage}
+              alt={`Bottle of ${huacoData.name}`}
+              class="lg:h-full lg:max-h-[550px] w-auto drop-shadow-2xl"
+            />
+          </div>
+
+          {/* Tarjeta de texto (visible en móvil y desktop) */}
+          <div class="parallax-card w-full mt-8 lg:absolute lg:inset-0 lg:flex lg:items-end lg:justify-end lg:mt-0 animate-on-scroll lg:animate-none">
+            <div class="w-full lg:w-2/3 bg-text/80 backdrop-blur-sm p-8 md:p-10 rounded-lg shadow-xl text-background lg:m-8">
+              <h3 class="font-display text-4xl md:text-6xl font-bold">{huacoData.name}</h3>
+              <div class="w-24 h-1 bg-primary mt-4" />
+              <div class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-4 text-sm font-body uppercase tracking-wider">
+                <p>
+                  <>
+                    <strong>Category:</strong>
+                    <br />
+                  </>{" "}
+                  {huacoData.category}
+                </p>
+                <p>
+                  <>
+                    <strong>Origin:</strong>
+                    <br />
+                  </>{" "}
+                  {huacoData.origin}
+                </p>
+                <p>
+                  <>
+                    <strong>Alcohol:</strong>
+                    <br />
+                  </>{" "}
+                  {huacoData.alcohol}
+                </p>
+              </div>
+              <p class="font-body mt-8 text-lg text-background/80 leading-relaxed">{huacoData.description}</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -102,25 +172,59 @@ const fortunaData = portfolio.brands.find((brand: any) => brand.name === "Cervez
 
 {
   yuliiaData && (
-    <section class="relative bg-background py-24 sm:py-32 overflow-hidden">
+    <section class="relative py-24 sm:py-32 overflow-hidden">
       <Image
         src={yuliiaBgImage}
         alt="Artisanal mezcal production"
-        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full object-cover opacity-60 z-0"
+        class="absolute inset-0 w-full h-full object-cover opacity-60 z-0"
       />
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="relative grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+        <div class="relative grid grid-cols-1 lg:grid-cols-5 items-center gap-8 lg:gap-0">
           <div class="lg:col-span-3 z-10 animate-on-scroll">
-            <div class="bg-background/60 backdrop-blur-xs p-8 md:p-10 rounded-lg shadow-xl">
-              <h3 class="font-display text-5xl md:text-6xl font-bold text-text">{yuliiaData.name}</h3>
+            <div class="bg-background/80 backdrop-blur-sm p-8 md:p-10 rounded-lg shadow-xl">
+              <h3 class="font-display text-4xl md:text-6xl font-bold text-text">{yuliiaData.name}</h3>
               <div class="w-24 h-1 bg-primary mt-4" />
               <div class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-4 text-sm font-body uppercase tracking-wider">
-                {/*...specs...*/}
+                <p>
+                  <>
+                    <strong>Category:</strong>
+                    <br />
+                  </>{" "}
+                  {yuliiaData.category}
+                </p>
+                <p>
+                  <>
+                    <strong>Origin:</strong>
+                    <br />
+                  </>{" "}
+                  {yuliiaData.origin}
+                </p>
+                <p>
+                  <>
+                    <strong>Alcohol:</strong>
+                    <br />
+                  </>{" "}
+                  {yuliiaData.alcohol}
+                </p>
+                <p>
+                  <>
+                    <strong>Distillation:</strong>
+                    <br />
+                  </>{" "}
+                  {yuliiaData.distillation}
+                </p>
+                <p>
+                  <>
+                    <strong>Milling:</strong>
+                    <br />
+                  </>{" "}
+                  {yuliiaData.milling}
+                </p>
               </div>
               <p class="font-body mt-8 text-lg text-text/80 leading-relaxed">{yuliiaData.description}</p>
             </div>
           </div>
-          <div class="lg:col-span-2 flex justify-center lg:justify-end animate-on-scroll">
+          <div class="lg:col-span-2 flex justify-center lg:justify-end animate-on-scroll order-first lg:order-last">
             <Image
               src={yuliiaImage}
               alt={`Bottle of ${yuliiaData.name}`}
@@ -136,30 +240,58 @@ const fortunaData = portfolio.brands.find((brand: any) => brand.name === "Cervez
 
 {
   fortunaData && (
-    <section id="fortuna-parallax" class="relative h-[800px] bg-background pt-20">
-      <div class="flex justify-center items-center h-full w-full">
-        <div class="relative flex justify-center items-center max-w-7xl mx-auto w-full">
-          <div class="parallax-bg w-full lg:w-4/5 h-[600px] px-6 lg:px-0">
+    <section id="fortuna-parallax" class="bg-[var(--color-wood)] py-20 sm:py-24 lg:h-[800px] lg:py-0">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 h-full">
+        {/* Contenedor principal que cambia de flex-col a un layout relativo en desktop */}
+        <div class="flex flex-col lg:relative items-center justify-center h-full">
+          {/* Imagen de fondo (solo para desktop) */}
+          <div class="parallax-bg hidden lg:block lg:absolute w-full lg:w-4/5 h-[600px]">
             <Image
               src={fortunaBgImage}
               alt={`Ambiance for ${fortunaData.name}`}
               quality="high"
-              class="rounded-lg shadow-2xl shadow-secondary/20 h-[600px] w-full object-cover"
+              class="rounded-lg shadow-2xl shadow-accent/50 h-full w-full object-cover"
             />
           </div>
 
-          <div class="parallax-bottle absolute inset-0 flex items-center">
+          {/* Botella (visible en móvil y desktop) */}
+          <div class="parallax-bottle w-2/3 sm:w-1/3 lg:absolute lg:inset-0 lg:flex lg:items-center lg:justify-start lg:w-auto animate-on-scroll lg:animate-none">
             <Image
               src={fortunaImage}
               alt={`Bottle of ${fortunaData.name}`}
-              class="h-full max-h-[550px] w-auto drop-shadow-2xl"
+              class="lg:h-full lg:max-h-[550px] w-auto drop-shadow-2xl"
             />
           </div>
 
-          <div class="parallax-card absolute inset-0 flex items-end justify-end drop-shadow-2xl">
-            <div class="w-11/12 md:w-1/2 lg:w-2/5 p-8 m-8 bg-black/80 backdrop-blur-sm border border-secondary rounded-lg text-background">
-              <h3 class="font-display text-4xl font-bold">{fortunaData.name}</h3>
-              <p class="font-body mt-4 text-lg text-background/80 leading-relaxed">{fortunaData.description}</p>
+          {/* Tarjeta de texto (visible en móvil y desktop) */}
+          <div class="parallax-card w-full mt-8 lg:absolute lg:inset-0 lg:flex lg:items-end lg:justify-end lg:mt-0 animate-on-scroll lg:animate-none">
+            <div class="w-full lg:w-2/3 bg-text/80 backdrop-blur-sm p-8 md:p-10 rounded-lg shadow-xl text-background lg:m-8">
+              <h3 class="font-display text-4xl md:text-6xl font-bold">{fortunaData.name}</h3>
+              <div class="w-24 h-1 bg-primary mt-4" />
+              <div class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-4 text-sm font-body uppercase tracking-wider">
+                <p>
+                  <>
+                    <strong>Category:</strong>
+                    <br />
+                  </>{" "}
+                  {fortunaData.category}
+                </p>
+                <p>
+                  <>
+                    <strong>Origin:</strong>
+                    <br />
+                  </>{" "}
+                  {fortunaData.origin}
+                </p>
+                <p>
+                  <>
+                    <strong>Alcohol:</strong>
+                    <br />
+                  </>{" "}
+                  {fortunaData.alcohol}
+                </p>
+              </div>
+              <p class="font-body mt-8 text-lg text-background/80 leading-relaxed">{fortunaData.description}</p>
             </div>
           </div>
         </div>
@@ -174,31 +306,70 @@ const fortunaData = portfolio.brands.find((brand: any) => brand.name === "Cervez
 
   gsap.registerPlugin(ScrollTrigger);
 
-  // Animación para la sección de Fortuna
-  gsap.to(".parallax-bg", {
-    yPercent: -20, // Se mueve hacia arriba un 20% de su altura
-    ease: "none",
-    scrollTrigger: {
-      trigger: "#fortuna-parallax",
-      scrub: true, // Asocia el movimiento directamente al scroll
-    },
-  });
+  // Usamos matchMedia para aplicar las animaciones de parallax SOLO en pantallas grandes
+  ScrollTrigger.matchMedia({
+    // Desktop (y más grande)
+    "(min-width: 1024px)": function () {
+      // huaco
+      gsap.fromTo(
+        ".parallax-bg",
+        { yPercent: 12 }, // Posición inicial
+        {
+          yPercent: -6, // Posición final
+          ease: "none",
+          scrollTrigger: { trigger: "#huaco-parallax", scrub: true },
+        }
+      );
 
-  gsap.to(".parallax-bottle", {
-    yPercent: -40, // Se mueve el doble de rápido que el fondo
-    ease: "none",
-    scrollTrigger: {
-      trigger: "#fortuna-parallax",
-      scrub: true,
-    },
-  });
+      gsap.fromTo(
+        ".parallax-bottle",
+        { yPercent: 20 }, // Posición inicial
+        {
+          yPercent: -20, // Posición final
+          ease: "none",
+          scrollTrigger: { trigger: "#huaco-parallax", scrub: true },
+        }
+      );
 
-  gsap.to(".parallax-card", {
-    yPercent: -50, // Se mueve aún más rápido, dando la sensación de estar más cerca
-    ease: "none",
-    scrollTrigger: {
-      trigger: "#fortuna-parallax",
-      scrub: true,
+      gsap.fromTo(
+        ".parallax-card",
+        { yPercent: 10 }, // Posición inicial
+        {
+          yPercent: -50, // Posición final
+          ease: "none",
+          scrollTrigger: { trigger: "#huaco-parallax", scrub: true },
+        }
+      );
+      // fortuna
+      gsap.fromTo(
+        ".parallax-bg",
+        { yPercent: 12 }, // Posición inicial
+        {
+          yPercent: -6, // Posición final
+          ease: "none",
+          scrollTrigger: { trigger: "#fortuna-parallax", scrub: true },
+        }
+      );
+
+      gsap.fromTo(
+        ".parallax-bottle",
+        { yPercent: 20 }, // Posición inicial
+        {
+          yPercent: -20, // Posición final
+          ease: "none",
+          scrollTrigger: { trigger: "#fortuna-parallax", scrub: true },
+        }
+      );
+
+      gsap.fromTo(
+        ".parallax-card",
+        { yPercent: 10 }, // Posición inicial
+        {
+          yPercent: -50, // Posición final
+          ease: "none",
+          scrollTrigger: { trigger: "#fortuna-parallax", scrub: true },
+        }
+      );
     },
   });
 </script>

@@ -4,6 +4,11 @@
     "subtitle": "Llevamos auténticos destilados mexicanos al corazón de los Estados Unidos, conectando un mundo de tradición con nuevos paladares.",
     "cta_button": "Explora Nuestro Portafolio"
   },
+  "nav": {
+    "about": "Nosotros",
+    "portfolio": "Portafolio",
+    "contact": "Contacto"
+  },
   "about": {
     "title": "Sobre Volcanic Spirits",
     "intro_p1": "Somos un equipo con más de una década de experiencia en comercio internacional y un profundo amor por los destilados mexicanos.",

@@ -4,6 +4,11 @@
     "subtitle": "We bring authentic Mexican spirits to the heart of the United States, connecting a world of tradition to new palates.",
     "cta_button": "Explore Our Portfolio"
   },
+  "nav": {
+    "about": "About Us",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
   "about": {
     "title": "About Volcanic Spirits",
     "intro_p1": "We are a team with over a decade of experience in international trade and a deep love for Mexican spirits.",
