@@ -18,12 +18,15 @@ import huacoImage from "../assets/images/huaco.png";
 import huacoBgImage from "../assets/images/mix.jpg";
 import fortunaImage from "../assets/images/fortuna.png";
 import fortunaBgImage from "../assets/images/preparation.jpg";
+import morettImage from "../assets/images/Botella_Morett_Transparency.png";
+import morettBgImage from "../assets/images/bg-Morett.jpg";
 
 // Esta lógica ahora funciona con el 'portfolio' que viene de las props.
 const caminanteData = portfolio.brands.find((brand: any) => brand.name === "Caminante Tequila");
 const yuliiaData = portfolio.brands.find((brand: any) => brand.name === "YULIIA Mezcal");
 const huacoData = portfolio.brands.find((brand: any) => brand.name === "Huaco Agave Distillate");
 const fortunaData = portfolio.brands.find((brand: any) => brand.name === "Cerveza Fortuna");
+const morettData = portfolio.brands.find((brand: any) => brand.name === "Morett Tequila");
 ---
 
 <section id="portfolio" class="bg-accent">
@@ -300,6 +303,65 @@ const fortunaData = portfolio.brands.find((brand: any) => brand.name === "Cervez
   )
 }
 
+{
+  morettData && (
+    <section
+      class="relative bg-cover bg-center bg-fixed py-24 sm:py-32"
+      style={{ backgroundImage: `url(${morettBgImage.src})` }}
+    >
+      <div class="absolute inset-0 bg-black/60" />
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-5 items-center gap-8 lg:gap-0">
+          <div class="lg:col-span-3 animate-on-scroll">
+            <div class="bg-background/80 backdrop-blur-sm p-8 md:p-10 rounded-lg shadow-xl text-text">
+              <h3 class="font-display text-4xl md:text-6xl font-bold text-text">{morettData.name}</h3>
+              <div class="w-24 h-1 bg-primary mt-4" />
+              <div class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-4 text-sm font-body uppercase tracking-wider">
+                <p>
+                  <>
+                    <strong>Category:</strong>
+                    <br />
+                  </>{" "}
+                  {morettData.category}
+                </p>
+                <p>
+                  <>
+                    <strong>Origin:</strong>
+                    <br />
+                  </>{" "}
+                  {morettData.origin}
+                </p>
+                <p>
+                  <>
+                    <strong>Alcohol:</strong>
+                    <br />
+                  </>{" "}
+                  {morettData.alcohol}
+                </p>
+                <p>
+                  <>
+                    <strong>Distillation:</strong>
+                    <br />
+                  </>{" "}
+                  {morettData.distillation}
+                </p>
+              </div>
+              <p class="font-body mt-8 text-lg text-text/80 leading-relaxed">{morettData.description}</p>
+            </div>
+          </div>
+          <div class="lg:col-span-2 flex justify-center animate-on-scroll order-first lg:order-last">
+            <Image
+              src={morettImage}
+              alt={`Bottle of ${morettData.name}`}
+              quality="high"
+              class="h-full max-h-[550px] w-auto drop-shadow-2xl"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
 <script>
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";

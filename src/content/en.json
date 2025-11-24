@@ -64,6 +64,15 @@
         "alcohol": "4.8% ",
         "description": "Cerveza Fortuna was born from the union and friendship of four entrepreneurs passionate about beer, who sought to produce a high-quality product with a unique aroma and flavor that had never been offered before, to satisfy the most demanding palates. These Beers are made with dedication, insight, and respect, achieving the ideal product to enjoy the best moments accompanied by a beer.  97]"
       }
+      ,
+      {
+        "name": "Morett Tequila",
+        "category": "Tequila Blanco",
+        "origin": "Jalisco, Mexico",
+        "alcohol": "40% Alc. Vol.",
+        "distillation": "Double Distilled",
+        "description": "Morett Tequila Blanco is a testament to the purity of blue agave. Crisp, clean, and vibrant, it offers a smooth taste with notes of citrus and sweet agave, perfect for sipping or as the foundation of an exceptional cocktail."
+      }
     ]
   },
   "agaveSpirits": {

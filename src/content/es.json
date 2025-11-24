@@ -63,6 +63,14 @@
         "origin": "Guadalajara, Jalisco",
         "alcohol": "4.8%",
         "description": "Cerveza Fortuna nace de la unión y amistad de cuatro empresarios apasionados por la cerveza, que buscaban producir un producto de alta calidad con un aroma y sabor únicos que nunca antes se había ofrecido, para satisfacer a los paladares más exigentes. Estas cervezas se elaboran con dedicación, perspicacia y respeto, logrando el producto ideal para disfrutar de los mejores momentos acompañado de una cerveza."
+      },
+      {
+        "name": "Morett Tequila",
+        "category": "Tequila Blanco",
+        "origin": "Jalisco, México",
+        "alcohol": "40% Alc. Vol.",
+        "distillation": "Doble Destilación",
+        "description": "Morett Tequila Blanco es un testimonio de la pureza del agave azul. Nítido, limpio y vibrante, ofrece un sabor suave con notas cítricas y de agave dulce, perfecto para degustar solo o como base de un cóctel excepcional."
       }
     ]
   },
