@@ -45,6 +45,128 @@ const morettData = portfolio.brands.find((brand: any) => brand.name === "Morett 
 </section>
 
 {
+  morettData && (
+    <section
+      class="relative bg-cover bg-center bg-fixed py-24 sm:py-32"
+      style={{ backgroundImage: `url(${morettBgImage.src})` }}
+    >
+      <div class="absolute inset-0 bg-black/60" />
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-5 items-center gap-8 lg:gap-0">
+          <div class="lg:col-span-3 animate-on-scroll">
+            <div class="bg-background/80 backdrop-blur-sm p-8 md:p-10 rounded-lg shadow-xl text-text">
+              <h3 class="font-display text-4xl md:text-6xl font-bold text-text">{morettData.name}</h3>
+              <div class="w-24 h-1 bg-primary mt-4" />
+              <div class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-4 text-sm font-body uppercase tracking-wider">
+                <p>
+                  <>
+                    <strong>Category:</strong>
+                    <br />
+                  </>{" "}
+                  {morettData.category}
+                </p>
+                <p>
+                  <>
+                    <strong>Origin:</strong>
+                    <br />
+                  </>{" "}
+                  {morettData.origin}
+                </p>
+                <p>
+                  <>
+                    <strong>Alcohol:</strong>
+                    <br />
+                  </>{" "}
+                  {morettData.alcohol}
+                </p>
+                <p>
+                  <>
+                    <strong>Distillation:</strong>
+                    <br />
+                  </>{" "}
+                  {morettData.distillation}
+                </p>
+              </div>
+              <p class="font-body mt-8 text-lg text-text/80 leading-relaxed">{morettData.description}</p>
+            </div>
+          </div>
+          <div class="lg:col-span-2 flex justify-center animate-on-scroll order-first lg:order-last">
+            <Image
+              src={morettImage}
+              alt={`Bottle of ${morettData.name}`}
+              quality="high"
+              class="h-full max-h-[550px] w-auto drop-shadow-2xl"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+{
+  huacoData && (
+    <section id="huaco-parallax" class="bg-[var(--color-wood)] py-20 sm:py-24 lg:h-[800px] lg:py-0">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 h-full">
+        {/* Contenedor principal que cambia de flex-col a un layout relativo en desktop */}
+        <div class="flex flex-col lg:relative items-center justify-center h-full">
+          {/* Imagen de fondo (solo para desktop) */}
+          <div class="parallax-bg hidden lg:block lg:absolute w-full lg:w-4/5 h-[600px]">
+            <Image
+              src={huacoBgImage}
+              alt={`Ambiance for ${huacoData.name}`}
+              quality="high"
+              class="rounded-lg shadow-2xl shadow-accent/50 h-full w-full object-cover"
+            />
+          </div>
+
+          {/* Botella (visible en móvil y desktop) */}
+          <div class="parallax-bottle w-2/3 sm:w-1/3 lg:absolute lg:inset-0 lg:flex lg:items-center lg:justify-start lg:w-auto animate-on-scroll lg:animate-none">
+            <Image
+              src={huacoImage}
+              alt={`Bottle of ${huacoData.name}`}
+              class="lg:h-full lg:max-h-[550px] w-auto drop-shadow-2xl"
+            />
+          </div>
+
+          {/* Tarjeta de texto (visible en móvil y desktop) */}
+          <div class="parallax-card w-full mt-8 lg:absolute lg:inset-0 lg:flex lg:items-end lg:justify-end lg:mt-0 animate-on-scroll lg:animate-none">
+            <div class="w-full lg:w-2/3 bg-text/80 backdrop-blur-sm p-8 md:p-10 rounded-lg shadow-xl text-background lg:m-8">
+              <h3 class="font-display text-4xl md:text-6xl font-bold">{huacoData.name}</h3>
+              <div class="w-24 h-1 bg-primary mt-4" />
+              <div class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-4 text-sm font-body uppercase tracking-wider">
+                <p>
+                  <>
+                    <strong>Category:</strong>
+                    <br />
+                  </>{" "}
+                  {huacoData.category}
+                </p>
+                <p>
+                  <>
+                    <strong>Origin:</strong>
+                    <br />
+                  </>{" "}
+                  {huacoData.origin}
+                </p>
+                <p>
+                  <>
+                    <strong>Alcohol:</strong>
+                    <br />
+                  </>{" "}
+                  {huacoData.alcohol}
+                </p>
+              </div>
+              <p class="font-body mt-8 text-lg text-background/80 leading-relaxed">{huacoData.description}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+{
   caminanteData && (
     <section
       class="relative bg-cover bg-center bg-fixed py-24 sm:py-32"
@@ -112,16 +234,16 @@ const morettData = portfolio.brands.find((brand: any) => brand.name === "Morett 
 }
 
 {
-  huacoData && (
-    <section id="huaco-parallax" class="bg-[var(--color-wood)] py-20 sm:py-24 lg:h-[800px] lg:py-0">
+  fortunaData && (
+    <section id="fortuna-parallax" class="bg-[var(--color-wood)] py-20 sm:py-24 lg:h-[800px] lg:py-0">
       <div class="max-w-7xl mx-auto px-6 lg:px-8 h-full">
         {/* Contenedor principal que cambia de flex-col a un layout relativo en desktop */}
         <div class="flex flex-col lg:relative items-center justify-center h-full">
           {/* Imagen de fondo (solo para desktop) */}
           <div class="parallax-bg hidden lg:block lg:absolute w-full lg:w-4/5 h-[600px]">
             <Image
-              src={huacoBgImage}
-              alt={`Ambiance for ${huacoData.name}`}
+              src={fortunaBgImage}
+              alt={`Ambiance for ${fortunaData.name}`}
               quality="high"
               class="rounded-lg shadow-2xl shadow-accent/50 h-full w-full object-cover"
             />
@@ -130,8 +252,8 @@ const morettData = portfolio.brands.find((brand: any) => brand.name === "Morett 
           {/* Botella (visible en móvil y desktop) */}
           <div class="parallax-bottle w-2/3 sm:w-1/3 lg:absolute lg:inset-0 lg:flex lg:items-center lg:justify-start lg:w-auto animate-on-scroll lg:animate-none">
             <Image
-              src={huacoImage}
-              alt={`Bottle of ${huacoData.name}`}
+              src={fortunaImage}
+              alt={`Bottle of ${fortunaData.name}`}
               class="lg:h-full lg:max-h-[550px] w-auto drop-shadow-2xl"
             />
           </div>
@@ -139,7 +261,7 @@ const morettData = portfolio.brands.find((brand: any) => brand.name === "Morett 
           {/* Tarjeta de texto (visible en móvil y desktop) */}
           <div class="parallax-card w-full mt-8 lg:absolute lg:inset-0 lg:flex lg:items-end lg:justify-end lg:mt-0 animate-on-scroll lg:animate-none">
             <div class="w-full lg:w-2/3 bg-text/80 backdrop-blur-sm p-8 md:p-10 rounded-lg shadow-xl text-background lg:m-8">
-              <h3 class="font-display text-4xl md:text-6xl font-bold">{huacoData.name}</h3>
+              <h3 class="font-display text-4xl md:text-6xl font-bold">{fortunaData.name}</h3>
               <div class="w-24 h-1 bg-primary mt-4" />
               <div class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-4 text-sm font-body uppercase tracking-wider">
                 <p>
@@ -147,24 +269,24 @@ const morettData = portfolio.brands.find((brand: any) => brand.name === "Morett 
                     <strong>Category:</strong>
                     <br />
                   </>{" "}
-                  {huacoData.category}
+                  {fortunaData.category}
                 </p>
                 <p>
                   <>
                     <strong>Origin:</strong>
                     <br />
                   </>{" "}
-                  {huacoData.origin}
+                  {fortunaData.origin}
                 </p>
                 <p>
                   <>
                     <strong>Alcohol:</strong>
                     <br />
                   </>{" "}
-                  {huacoData.alcohol}
+                  {fortunaData.alcohol}
                 </p>
               </div>
-              <p class="font-body mt-8 text-lg text-background/80 leading-relaxed">{huacoData.description}</p>
+              <p class="font-body mt-8 text-lg text-background/80 leading-relaxed">{fortunaData.description}</p>
             </div>
           </div>
         </div>
@@ -241,127 +363,6 @@ const morettData = portfolio.brands.find((brand: any) => brand.name === "Morett 
   )
 }
 
-{
-  fortunaData && (
-    <section id="fortuna-parallax" class="bg-[var(--color-wood)] py-20 sm:py-24 lg:h-[800px] lg:py-0">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8 h-full">
-        {/* Contenedor principal que cambia de flex-col a un layout relativo en desktop */}
-        <div class="flex flex-col lg:relative items-center justify-center h-full">
-          {/* Imagen de fondo (solo para desktop) */}
-          <div class="parallax-bg hidden lg:block lg:absolute w-full lg:w-4/5 h-[600px]">
-            <Image
-              src={fortunaBgImage}
-              alt={`Ambiance for ${fortunaData.name}`}
-              quality="high"
-              class="rounded-lg shadow-2xl shadow-accent/50 h-full w-full object-cover"
-            />
-          </div>
-
-          {/* Botella (visible en móvil y desktop) */}
-          <div class="parallax-bottle w-2/3 sm:w-1/3 lg:absolute lg:inset-0 lg:flex lg:items-center lg:justify-start lg:w-auto animate-on-scroll lg:animate-none">
-            <Image
-              src={fortunaImage}
-              alt={`Bottle of ${fortunaData.name}`}
-              class="lg:h-full lg:max-h-[550px] w-auto drop-shadow-2xl"
-            />
-          </div>
-
-          {/* Tarjeta de texto (visible en móvil y desktop) */}
-          <div class="parallax-card w-full mt-8 lg:absolute lg:inset-0 lg:flex lg:items-end lg:justify-end lg:mt-0 animate-on-scroll lg:animate-none">
-            <div class="w-full lg:w-2/3 bg-text/80 backdrop-blur-sm p-8 md:p-10 rounded-lg shadow-xl text-background lg:m-8">
-              <h3 class="font-display text-4xl md:text-6xl font-bold">{fortunaData.name}</h3>
-              <div class="w-24 h-1 bg-primary mt-4" />
-              <div class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-4 text-sm font-body uppercase tracking-wider">
-                <p>
-                  <>
-                    <strong>Category:</strong>
-                    <br />
-                  </>{" "}
-                  {fortunaData.category}
-                </p>
-                <p>
-                  <>
-                    <strong>Origin:</strong>
-                    <br />
-                  </>{" "}
-                  {fortunaData.origin}
-                </p>
-                <p>
-                  <>
-                    <strong>Alcohol:</strong>
-                    <br />
-                  </>{" "}
-                  {fortunaData.alcohol}
-                </p>
-              </div>
-              <p class="font-body mt-8 text-lg text-background/80 leading-relaxed">{fortunaData.description}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-{
-  morettData && (
-    <section
-      class="relative bg-cover bg-center bg-fixed py-24 sm:py-32"
-      style={{ backgroundImage: `url(${morettBgImage.src})` }}
-    >
-      <div class="absolute inset-0 bg-black/60" />
-      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-5 items-center gap-8 lg:gap-0">
-          <div class="lg:col-span-3 animate-on-scroll">
-            <div class="bg-background/80 backdrop-blur-sm p-8 md:p-10 rounded-lg shadow-xl text-text">
-              <h3 class="font-display text-4xl md:text-6xl font-bold text-text">{morettData.name}</h3>
-              <div class="w-24 h-1 bg-primary mt-4" />
-              <div class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-4 text-sm font-body uppercase tracking-wider">
-                <p>
-                  <>
-                    <strong>Category:</strong>
-                    <br />
-                  </>{" "}
-                  {morettData.category}
-                </p>
-                <p>
-                  <>
-                    <strong>Origin:</strong>
-                    <br />
-                  </>{" "}
-                  {morettData.origin}
-                </p>
-                <p>
-                  <>
-                    <strong>Alcohol:</strong>
-                    <br />
-                  </>{" "}
-                  {morettData.alcohol}
-                </p>
-                <p>
-                  <>
-                    <strong>Distillation:</strong>
-                    <br />
-                  </>{" "}
-                  {morettData.distillation}
-                </p>
-              </div>
-              <p class="font-body mt-8 text-lg text-text/80 leading-relaxed">{morettData.description}</p>
-            </div>
-          </div>
-          <div class="lg:col-span-2 flex justify-center animate-on-scroll order-first lg:order-last">
-            <Image
-              src={morettImage}
-              alt={`Bottle of ${morettData.name}`}
-              quality="high"
-              class="h-full max-h-[550px] w-auto drop-shadow-2xl"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
 <script>
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
