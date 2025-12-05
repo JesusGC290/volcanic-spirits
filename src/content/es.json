@@ -31,6 +31,14 @@
     "subtitle": "Acompañamos a las marcas mexicanas en su viaje internacional, del sueño a la realidad.",
     "brands": [
       {
+        "name": "Talava",
+        "category": "Tequila",
+        "origin": "Jalisco, México",
+        "alcohol": "43% alc",
+        "volume": "750ml",
+        "description": "Nuestro agave maduro se cocina lentamente en un horno cónico artesanal, infundiéndolo con un ahumado suave y distintivo. El jugo dulce, extraído con un mazo de madera en una canoa, se convierte en un mosto rico que fermenta naturalmente con levadura silvestre. Una doble destilación, finalizada en cobre, imparte un carácter único y refinado, creado para los paladares más exigentes."
+      },
+      {
         "name": "YULIIA Mezcal",
         "category": "Mezcal y Licores de Sabores",
         "origin": "Oaxaca, México",

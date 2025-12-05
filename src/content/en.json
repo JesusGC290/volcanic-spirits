@@ -31,6 +31,14 @@
     "subtitle": "We accompany Mexican brands on their international journey, from dream to reality. ",
     "brands": [
       {
+        "name": "Talava",
+        "category": "Tequila",
+        "origin": "Jalisco, Mexico",
+        "alcohol": "43% alc",
+        "volume": "750ml",
+        "description": "Our mature agave is slowly cooked in a handcrafted conical oven, infusing it with a smooth, distinctive smokiness. The sweet juice, extracted with a wooden mallet in a canoe-shaped trough, becomes a rich must that ferments naturally with wild yeast. A double distillation, finished in copper, imparts a unique and refined character—crafted for the most discerning palates."
+      },
+      {
         "name": "YULIIA Mezcal",
         "category": "Mezcal & Flavored Liqueurs ",
         "origin": "Oaxaca, Mexico ",
